@@ -1,2 +1,2 @@
 # javascript-18
- General javascript practice
+ Javascript practice
