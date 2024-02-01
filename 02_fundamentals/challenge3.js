@@ -1,6 +1,6 @@
 "use strict";
 //BMI comparison
-console.log("Challenge 2");
+console.log("Challenge 3");
 
 let mark = {
     fullName: `Mark Miller`,
