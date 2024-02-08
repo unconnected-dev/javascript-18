@@ -1,5 +1,8 @@
 'use strict';
 
+
+//"this" depends on how/where a function is called NOT where it is defined
+
 //this Keyword
 //Special variable that is created for every execution context (every function)
 //Takes the value of (points to the "owner" of the function in which the this Keyword is used)
