@@ -2,7 +2,12 @@
 
 
 //Optional chaining was introduced in ES2020
+//It provides a concise way to access properties of an object when
+//it's uncertain whether the object or its properties are defined
+
 //Designed to work with nullish coalescing operator
+
+
 const restaurant = {
     name: 'Classico Italiano',
     location: 'Via Angelo Tavanti 23, Firenze, Italy',
