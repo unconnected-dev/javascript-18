@@ -1,16 +1,19 @@
 'use strict';
 
 
-//Logical operators
-//Can use ANY data type, return ANY data type
-//short circuiting, short circuit evaluation
+//Short Circuiting / Short Circuit Evaluation
+//Short circuiting involves certain operators `&&` and `||`
+//It allows the compiler to avoid evaluating the second operand
+//if the outcome of the expression can be determined by 
+//evaluating only the first operand
 
-//OR operator could set default values
-//AND operator could execute code in second if first is true
+//It can use ANY data type, return ANY data type
+
+//`||` could set default values
+//`&&` could execute code in second if first is true
  
 
-//OR operator
-//Short circuiting means
+//`||` OR operator short circuiting means
 //If the first value is truthy it will be returned
 if(false){
     console.log(3 || 'Jonas');              //3
@@ -20,14 +23,14 @@ if(false){
 }
 
 
-//Hello is the first truthy
+//In the example below `Hello` is the first truthy
 //So it will short circuit the evaluation
 if(false){
     console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 }
 
-//Normal way to check if a value exists
-//If not set a default of 10
+//The example below is the normal way to check if a value exists
+//If it is not then it sets a default of 10
 //Neither statement would work if numGuests = 0, because 0 is falsy
 if(false){
     const restaurant = {
@@ -43,8 +46,10 @@ if(false){
 }
 
 
-//Short circuit with ||
-if(true){
+//The example below is a short circuit with `||`
+//It accomplishes the same as the previous example
+//If it used `??` it would return 0
+if(false){
     const restaurant = {
         name: 'Capri',
         numGuests: 0
@@ -57,9 +62,10 @@ if(true){
     console.log(guestsShort);
 }
 
-//AND operator
-//Short circuits when the first value is falsy
-//Returns the first falsy or last truthy
+
+//`&&` AND operator short circuiting means
+//When the first value is falsy the expression stops
+//It returns the first falsy or last truthy
 if(false){
     console.log(0 && 'Jonas');                          //0
     console.log(7 && 'Jonas');                          //Jonas
@@ -67,11 +73,10 @@ if(false){
 }
 
 
-//Normal way to check if a function exists
-if(false){
+//The example below is the normal way to check if a function exists
+//If it doesn't the function is not called
+if(true){
     const restaurant = {
-        name: 'Classico Italiano',
-        location: 'Via Angelo Tavanti 23, Firenze, Italy',
         categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
         starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
         mainMenu: ['Pizza', 'Pasta', 'Risotto'],
@@ -89,7 +94,9 @@ if(false){
     }
 }
 
-//It does make things harder to read probably
+//The example below is a short circuit with `&&`
+//It accomplishes the same as the previous example
+//It does make things harder to read
 if(false){
     const restaurant = {
         name: 'Classico Italiano',
