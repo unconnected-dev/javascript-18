@@ -36,7 +36,7 @@ const restaurant = {
   };
 
 
-//Useful for API where data may or may no exist
+//Useful for API where data may or may not exist
 //Checking for undefined first
 if(false){
     if(restaurant.openingHours.fri)
