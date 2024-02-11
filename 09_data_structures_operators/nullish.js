@@ -1,13 +1,17 @@
 'use strict';
 
 
-//Nullish coalescing operator (??)
-//Was introducted in ES2020
+//Nullish Coalescing Operator (??)
+//The nullish coalescing operator is a JavaScript operator introduced in ES11 (2020)
+//It provides a concise way to handle situations where a variable might be null or
+//undefined by returning a default value only if the variable is null or undefined
+
 //Similar to ||
 //Returns a default value if a variable may be null or undefined
 
 
 //Basic example
+//With || difference
 if(false){
     const someVariable = 0;
     const defaultValue = 'default';
