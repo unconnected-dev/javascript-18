@@ -19,7 +19,7 @@
 //The number 1 will be printed to console immediately
 function print1(){
     const number1 = 1;
-    console.log(`${number1}`)
+    console.log(`${number1}`);
 }
 
 
@@ -31,7 +31,7 @@ function print2(){
     }
     
     const number2 = getNumber2();
-    console.log(`${number2}`)
+    console.log(`${number2}`);
 }
 
 
@@ -70,7 +70,7 @@ function print3(){
 //The number 4 will be printed to console immediately
 function print4(){
     const number4 = 4;
-    console.log(`${number4}`)
+    console.log(`${number4}`);
 }
 
 print1();    //Synchronous: prints 1
