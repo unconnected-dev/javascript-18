@@ -43,3 +43,16 @@ logToConsole(rejectedValue);
 
 const rejectedValueError = Promise.reject(new Error('an error'));
 logToConsole(rejectedValueError);
+
+
+//Promise.resolve(value): 
+//Wraps a value in a resolved promise. If the value is already a promise, it 
+//returns that promise
+
+//Promise.reject(reason): 
+//Creates a rejected promise with a given reason. Using an Error object as the reason 
+//is recommended for better error handling
+
+//Error Handling: 
+//The logToConsole function demonstrates how promises are handled. Non-promise values
+//will result in errors if passed to functions expecting promises
