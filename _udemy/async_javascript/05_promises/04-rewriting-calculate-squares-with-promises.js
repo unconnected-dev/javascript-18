@@ -78,12 +78,12 @@ calculateSquare(4)
 //The function is called with an invalid argument (a string instead of a number)
 //.then() is used again, but this time the error handler will be executed.
 calculateSquare('test string')
-.then(
-    value => {
-        //This function would be called if the promise resolves successfully
-        console.log(`${value}`);
-    },
-    error => {
-        //This function is called because the promise is rejected
-        console.log(`${error}`);//Logs: Error: Argument of type number is expected
-    });
+    .then(
+        value => {
+            //This function would be called if the promise resolves successfully
+            console.log(`${value}`);
+        },
+        error => {
+            //This function is called because the promise is rejected
+            console.log(`${error}`);//Logs: Error: Argument of type number is expected
+        });
