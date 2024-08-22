@@ -55,8 +55,27 @@ Promise.all([
     //This will cause Promise.all to reject immediately
     //Uncomment the following line to see the effect
     //Promise.reject('rejected for some reason')
-    
+
 ])
     .then(prices => {
         console.log(prices);//Logs: an array with all resolved values or errors
     });
+
+
+//Handling Rejections with Promise.all:
+//  - Immediate Rejection: Promise.all will reject immediately if any of the promises in the 
+//    array reject. The rejection reason of Promise.all will be the reason from the first promise
+//    that rejected
+
+//Abandoning Other Results:
+//  - Once a promise in the Promise.all array rejects, all other promises are abandoned, and the 
+//    entire Promise.all promise is rejected
+
+
+//Handling Individual Promise Rejections:
+//  - Using .catch(): By attaching .catch() to each individual promise, errors can be handled 
+//    separately, and each promise resolves with either its result or an error
+
+//Resolved Values or Errors: 
+//  - This approach ensures that Promise.all resolves with an array containing either resolved 
+//    values or errors, preventing the entire promise from rejecting due to individual rejections
