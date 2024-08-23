@@ -1,0 +1,21 @@
+{
+    "name": "testing-callbacks",
+    "version": "1.0.0",
+    "description": "",
+    "main": "calculate-square.js",
+    "type": "module",
+    "scripts": {
+        "test": "mocha"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "chai": "^4.5.0",
+        "chai-as-promised": "^8.0.0",
+        "mocha": "^10.7.3"
+    },
+    "dependencies": {
+        "save-dev": "^0.0.1-security"
+    }
+}
