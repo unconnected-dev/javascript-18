@@ -1,3 +1,5 @@
+"use strict";
+
 
 //Basic Promise - ChatGPT
 if (false){
@@ -20,12 +22,11 @@ if (false){
 
     //Call the async function
     getData();
-
 }
 
-//Basic Promise
-if(true){
 
+//Basic Promise
+if(false){
     function fetchData(){
         return new Promise((resolve, reject)=> {
                 setTimeout(() => {
@@ -42,7 +43,6 @@ if(true){
     }
 
     async function test(){
-
         await getData();
         console.log("Done")
     } 
@@ -50,8 +50,7 @@ if(true){
 }
 
 
-if (false){
-
+if(false){
     function fetchData(){
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -67,7 +66,6 @@ if (false){
         })
     }
 
-
     async function getData(){
         console.log("fetching data");
         const data = await fetchData();
@@ -77,3 +75,20 @@ if (false){
     getData();
 }
 
+if(true){
+    console.log("running file");
+
+    const myPromise = new Promise(function(resolve, reject){
+        setTimeout(() => {
+            resolve("a text string");
+        }, 2000);        
+    });
+
+    async function f(){
+        const value = await myPromise;
+        
+        console.log(`value: ${value}`);
+    }
+
+    f();
+}
