@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Long Tasks</title>
+		<style>
+			#straightforward-solution:active {
+				background-color: gray;
+			}
+			#optimized-solution:active {
+				background-color: gray;
+			}
+			#microtask-solution:active {
+				background-color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h3>How Long Tasks Affect User Experience</h3>
+		
+		<div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
+			<div id="progress"></div>
+			<button id="straightforward-solution">Straightforward solution</button>
+			<button id="optimized-solution">Optimized solution</button>
+			
+			<textarea rows="10" cols="50" id="result">Lorem ipsum dolor sit amet</textarea>
+		</div>
+
+		<script>
+			const element = document.getElementById('progress');
+			const MAX_NUMBER = 27654321;
+
+			function generateNumbers() {
+				const arrayOfNumbers = [];
+				for (let i = 1; i <= MAX_NUMBER; i++) {
+					arrayOfNumbers.push(i);
+				}
+				return arrayOfNumbers;
+			}
+			
+
+			function straightforwardSolution () {
+				//Straightforward solution here
+				//This approach locks up the page until the task is finished
+				//It can block the rendering pipeline, causing a bad user experience
+				let arrayOfNumbers = generateNumbers();
+				const squareRoots = [];
+
+				//Processing the entire array in a single loop
+				//Since this array is large, the forEach loop runs longer than 16ms
+				//This blocks the rendering pipeline and makes the UI unresponsive
+				arrayOfNumbers.forEach(number => {
+					const sqRoot = Math.sqrt(number);
+					squareRoots.push(sqRoot);
+					const numbersLeft = MAX_NUMBER - number;
+
+					//Updating the UI, but this doesn't reflect in real-time due to the 
+					//blocking nature of the loop
+					element.textContent = `${numbersLeft} items left to process`;
+				});
+
+				console.log(`${squareRoots}`);
+			}
+
+
+			function optimizedSolution () {
+				//Optimized solution here
+				let arrayOfNumbers = generateNumbers();
+				const squareRoots = [];
+
+				//This function splits the processing of the main array into smaller batches
+				//This allows the JavaScript engine to process other tasks (like user input or rendering)
+				//between the processing of these batches, keeping the UI responsive
+				function processBatch(){
+					
+					const BATCH_SIZE = 50000;//Size of each batch to be processed
+					const batch = arrayOfNumbers.slice(0, BATCH_SIZE);
+					arrayOfNumbers = arrayOfNumbers.slice(BATCH_SIZE);
+
+					batch.forEach(number => {
+						const sqRoot = Math.sqrt(number);
+						squareRoots.push(sqRoot);
+						const numbersLeft = MAX_NUMBER - number;
+						
+						//Updating the UI, now the updates will be more responsive
+						element.textContent = `${numbersLeft} items left to process`;
+					});
+
+					//If there are still numbers left to process, schedule the next batch
+					//setTimeout with 0 delay gives control back to the browser's event loop
+					//This allows the rendering pipeline to draw updates, improving user experience
+					if(arrayOfNumbers.length > 0){
+						setTimeout(processBatch, 0);
+					}
+					else{
+						console.log(`square roots: ${squareRoots}`);
+					}
+				}
+
+				//Initiate the batch processing
+				//This starts the optimized, non-blocking processing of numbers
+				setTimeout(processBatch, 0);
+			}
+
+			document.getElementById('straightforward-solution').addEventListener('click', straightforwardSolution);
+			document.getElementById('optimized-solution').addEventListener('click', optimizedSolution);
+		</script>
+	</body>
+</html>
