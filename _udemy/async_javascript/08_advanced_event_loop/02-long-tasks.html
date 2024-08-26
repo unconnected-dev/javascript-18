@@ -20,11 +20,12 @@
 
 	<body>
 		<h3>How Long Tasks Affect User Experience</h3>
-		
+
 		<div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
 			<div id="progress"></div>
 			<button id="straightforward-solution">Straightforward solution</button>
 			<button id="optimized-solution">Optimized solution</button>
+			<button id="microtask-solution">Microtask solution</button>
 			
 			<textarea rows="10" cols="50" id="result">Lorem ipsum dolor sit amet</textarea>
 		</div>
@@ -105,8 +106,72 @@
 				setTimeout(processBatch, 0);
 			}
 
+
+			//Microtask Timing:
+			// - In this solution, the next batch of processing is scheduled using Promise.resolve().then(processBatch).
+			//	 This schedules the processBatch function as a microtask.
+			// - Microtasks (such as those created by Promise.resolve()) are executed immediately after the currently 
+			//	 running task finishes, before yielding control back to the event loop
+			// - Because microtasks are executed in quick succession, the browser's event loop has less opportunity to 
+			//	 perform other tasks, such as rendering updates to the screen or handling user input
+
+			//Impact on Rendering Pipeline:
+			// - The continuous processing of microtasks without yielding control back to the event loop can effectively 
+			//	 "starve" the browser's rendering pipeline
+			// - Although the microtask-based approach breaks the work into batches, it can still lead to a situation where
+			//	 the rendering pipeline is delayed, causing the UI to become unresponsive or to fail to update in a timely manner
+			// - Unlike the setTimeout approach, which allows the event loop to process other tasks between batches, the 
+			//	 microtask approach can create the illusion of "non-blocking" behavior while still delaying essential UI updates
+			//	 because the browser prioritizes microtasks over rendering
+
+			//Potential Problems:
+			// - While this approach may seem more efficient than the straightforward solution, it can still cause issues with UI
+			// 	 responsiveness
+			// - If the processing of microtasks takes too long, the user might not see any updates or responses until all the 
+			//	 microtasks are completed, which defeats the purpose of breaking the work into batches
+			// - This can lead to the browser's inability to render updates at the usual 60 frames per second, resulting in 
+			//	 noticeable lag or stuttering in UI updates
+			function microtaskSolution () {
+				//Microtask solution here
+				let arrayOfNumbers = generateNumbers();
+				const squareRoots = [];
+	
+				function processBatch() {
+
+					const BATCH_SIZE = 50000;//Size of each batch to be processed
+					const batch = arrayOfNumbers.slice(0, BATCH_SIZE);
+					arrayOfNumbers = arrayOfNumbers.slice(BATCH_SIZE);
+
+					batch.forEach(number => {
+						const sqRoot = Math.sqrt(number);
+						squareRoots.push(sqRoot);
+						const numbersLeft = MAX_NUMBER - number;
+						
+						//Updating the UI, but updates may not appear in real-time due to microtask timing
+						element.textContent = numbersLeft + ' items left to process';
+					});	
+
+					if (arrayOfNumbers.length > 0) {
+						//Scheduling the next batch processing as a microtask using Promise.resolve()
+						//Microtasks are processed immediately after the currently executing task completes
+						Promise.resolve()
+							.then(processBatch);
+					}
+					else{
+						console.log(`${squareRoots}`);
+					}
+				}
+	
+				//Initiate the batch processing using microtasks
+				//The first batch is scheduled as a microtask
+				Promise.resolve()
+					.then(processBatch);
+			}
+
+			
 			document.getElementById('straightforward-solution').addEventListener('click', straightforwardSolution);
 			document.getElementById('optimized-solution').addEventListener('click', optimizedSolution);
+			document.getElementById('microtask-solution').addEventListener('click', microtaskSolution);
 		</script>
 	</body>
 </html>
