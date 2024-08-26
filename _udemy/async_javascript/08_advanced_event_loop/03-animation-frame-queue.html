@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Long Tasks</title>
+        <style>
+            #box {
+                background-color: green;
+                position: absolute;
+                top: 150px;
+                left: 400px;
+                width: 70px;
+                height: 70px;
+            }
+            #animation-button:active {
+                background-color: gray;
+            }
+            p {
+                margin: 0;
+            }
+            input {
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h3>Simple Animation Example</h3>
+        <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
+            <p>Please enter new coordinates for green box:</p>
+            <label>
+                <span>Target Left:</span>
+                <input type="text" id="left" value="700" />
+            </label>
+            <label>
+                <span>Target Top:</span>
+                <input type="text" id="top" value="150" />
+            </label>
+            <label>
+                <span>Duration:</span>
+                <input type="text" id="duration" value="1000" />
+            </label>
+            <button id="animation-button">Move the box</button>
+            
+            <div id="box"></div>
+        </div>
+
+        <script>
+            //requestAnimationFrame and the Animation Frame Queue:
+            // - requestAnimationFrame is a method that tells the browser you wish to perform an animation 
+            //   and requests that the browser call a specified function to update the animation before the next repaint
+            // - It places the callback function (animateBox in this case) into the animation frame queue
+            // - The function in the queue is executed just before the browser's next repaint, ensuring that the animation 
+            //   is synchronized with the display refresh rate (usually 60 frames per second)
+            // - This method is more efficient than using setTimeout or setInterval because the browser can optimize animations,
+            //   pausing them when the tab is inactive or the window is minimized, and ensuring smoothness when active
+
+            //Smooth Animation:
+            // - By using requestAnimationFrame, the animation runs smoothly and efficiently because it automatically adapts to 
+            //   the display's refresh rate
+            // - The browser batches DOM changes to optimize performance, ensuring that updates (like moving the box) happen at 
+            //   the most appropriate time
+
+            //Avoiding Jank:
+            // - "Jank" refers to stuttering or halting animations that occur when the browser is unable to keep up with the 
+            //   required frame rate (e.g., 60fps)
+            // - requestAnimationFrame helps to avoid jank by aligning the animation steps with the browser's rendering cycle, 
+            //   reducing the likelihood of dropping frames or causing other performance issues
+
+            //Precision Timing:
+            // - The currentTimestamp and targetTimestamp variables are used to ensure that the animation runs for the correct 
+            //   duration, irrespective of slight variations in frame timing
+            // - Each frame updates the box's position incrementally based on the time elapsed, leading to a precise and smooth
+            //   animation transition
+            function animateBox(targetLeft, targetTop, targetTimestamp, horizontalStep, verticalStep) {
+                const box = document.getElementById('box');
+                const currentCoords = box.getBoundingClientRect();
+                const currentTimestamp = new Date().getTime();
+                
+                //Check if the current time is before the target time (animation should still be running)
+                if(currentTimestamp < targetTimestamp) {
+                    //Move the box by the calculated step values
+                    box.style.left = currentCoords.left + horizontalStep + 'px';
+                    box.style.top = currentCoords.top + verticalStep + 'px';
+                     
+                    //Use requestAnimationFrame to queue the next step of the animation
+                    //requestAnimationFrame schedules the function to be called before the next repaint
+                    //This ensures that the animation is smooth and runs at the screen's refresh rate (typically 60fps)
+                    requestAnimationFrame(
+                        () => animateBox(targetLeft, targetTop, targetTimestamp, horizontalStep, verticalStep)
+                    );
+                } 
+                else {
+                    //When the animation duration is over, set the final position of the box
+                    box.style.left = targetLeft + 'px';
+                    box.style.top = targetTop + 'px';
+                }
+            }
+
+
+            function animationButtonClickHandler() {
+                const targetLeft = parseInt(document.getElementById('left').value);
+                const targetTop = parseInt(document.getElementById('top').value);
+                const duration = parseInt(document.getElementById('duration').value);
+
+                const box = document.getElementById('box');
+                const currentBoxCoords = box.getBoundingClientRect();
+                const horizontalDistance = targetLeft - currentBoxCoords.left;
+                const verticalDistance = targetTop - currentBoxCoords.top;
+
+                //Calculate the number of steps based on the duration and the assumed frame rate (16ms per frame for 60fps)
+                const quantityOfSteps = duration / 16;
+                const horizontalStep = horizontalDistance / quantityOfSteps;
+                const verticalStep = verticalDistance / quantityOfSteps;
+                
+                const currentTimestamp = new Date().getTime();
+                const targetTimestamp = currentTimestamp + duration;
+
+                //Start the animation by calling animateBox with the calculated parameters
+                animateBox(targetLeft, targetTop, targetTimestamp, horizontalStep, verticalStep);
+            }
+
+            document.getElementById('animation-button').addEventListener('click', animationButtonClickHandler);
+        </script>
+    </body>
+</html>
