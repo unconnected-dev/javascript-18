@@ -50,3 +50,17 @@ console.log(`${me.firstName} ${me.lastName}`);
 //However, you cannot reassign the `me` variable to a new object
 //Uncommenting the following line would cause a TypeError: Assignment to constant variable
 // me = { firstName: "John", lastName: "Doe" }; 
+
+
+
+//Block Scoping: 
+//const behaves the same as let regarding block scoping, restricting access to the block in which 
+//it's defined
+
+//Immutable Binding: 
+//The primary difference between const and let is that const ensures the variable binding is immutable, 
+//meaning the reference to the value cannot be changed once set
+
+//Mutable Values: 
+//If a const variable points to an object or array, the contents of that object or array can still be 
+//modified. The immutability applies only to the variable's binding, not the value it holds
