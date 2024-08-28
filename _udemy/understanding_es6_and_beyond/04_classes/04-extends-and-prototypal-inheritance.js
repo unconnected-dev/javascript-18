@@ -18,7 +18,6 @@
 
 
 class Person{
-
     //Public instance field
     firstName;
 
