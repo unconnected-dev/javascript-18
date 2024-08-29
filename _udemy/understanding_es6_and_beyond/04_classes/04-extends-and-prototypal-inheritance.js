@@ -17,6 +17,7 @@
 
 
 
+//This defines a new class named `Person`
 class Person{
     //Public instance field
     firstName;

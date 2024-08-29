@@ -11,6 +11,9 @@
 // - The `constructor` method is automatically called when you use the `new` 
 //   keyword to create an instance of the class
 
+
+
+//This defines a new class named `Person`
 class Person{
     //A public instance field `firstName` is defined.
     firstName;
@@ -21,7 +24,6 @@ class Person{
         this.firstName = name;
     }
 }
-
 
 //Creating instances of the `Person` class
 let me = new Person("Tony");

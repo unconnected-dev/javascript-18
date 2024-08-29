@@ -30,7 +30,10 @@
 //   within the class body, outside the constructor
 
 
+
+//This defines a new class named `Person`
 class Person{
+    
     //Defining a public instance field:
     //This field is publicly accessible, meaning it can be accessed or modified from outside the class
     firstName = "Tony";
