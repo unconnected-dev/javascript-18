@@ -75,7 +75,7 @@ if(false){
     getData();
 }
 
-if(true){
+if(false){
     console.log("running file");
 
     const myPromise = new Promise(function(resolve, reject){
@@ -91,4 +91,27 @@ if(true){
     }
 
     f();
+}
+
+if(true){
+    let myObject = {
+        testname: "test",
+
+        callme: function(){
+            console.log(this);
+
+            function subcall(){
+                console.log(`subcall: ${this}`);
+            }
+
+            let othercall = function(){
+                console.log(`othercall: ${this}`);
+            }
+
+            subcall();
+            othercall();
+        }
+    }
+
+    myObject.callme();
 }
