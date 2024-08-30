@@ -10,6 +10,24 @@
 //   or where it was defined
 
 
+//Note: The key thing is this is an object, like below being obj
+//If a regular function is called like test(), there is no parent. before it
+//Which would be the value of `this`
+let obj = {
+    method: function() {
+        console.log(this);  //`this` is `obj`
+        
+        function test(){
+            console.log(`testcall: ${this}`);  //`this` is `obj`
+        }
+
+        test();
+    }
+};
+obj.method();               //Logs: obj
+
+
+
 let me = {
     firstname: "Tony",
 
