@@ -66,3 +66,35 @@ console.log((() => { return 1 })());
 //   instances, unlike regular functions
 // - Cannot have a `prototype` property: Since arrow functions are not constructible,
 //   they do not have a `prototype` property
+
+
+
+//Arrow Functions:
+// - Arrow functions are a more concise way to write function expressions in JavaScript
+// - They are anonymous, meaning they do not have their own name
+// - The syntax is shorter and often more readable, especially for simple functions
+
+//Lexical this:
+// - One of the most important features of arrow functions is that they do not have their
+//   own this context
+// - Instead, they inherit this from the surrounding (lexical) scope. This is particularly
+//   useful in situations where using the this keyword inside a regular function would refer
+//   to an unexpected context
+
+//Implicit Returns:
+// - If an arrow function has a single expression in its body, you can omit the braces {} and
+//   the return keyword
+// - This makes the function even more concise
+
+//Use Cases:
+// - Arrow functions are commonly used in scenarios where you would normally use a function
+//   expression, such as in callbacks or as arguments to functions like map, filter, or reduce
+
+//Limitations:
+// - Arrow functions cannot be used as constructors; you cannot use new with them
+// - They also lack their own arguments object and must rely on the surrounding context's arguments
+//   or use rest parameters
+
+//Practical Example:
+// -The example logThis shows how arrow functions can be passed as arguments to other functions,
+//   where they can be executed in the context provided by the enclosing function
