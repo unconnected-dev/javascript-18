@@ -15,16 +15,16 @@
 //Which would be the value of `this`
 let obj = {
     method: function() {
-        console.log(this);  //`this` is `obj`
+        console.log(this);                      //`this` is `obj`
         
         function test(){
-            console.log(`testcall: ${this}`);  //`this` is `obj`
+            console.log(`testcall: ${this}`);   //`this` is `obj`
         }
 
         test();
     }
 };
-obj.method();               //Logs: obj
+obj.method();                                   //Logs: obj
 
 
 
