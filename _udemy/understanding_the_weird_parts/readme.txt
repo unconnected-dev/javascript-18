@@ -41,3 +41,19 @@ Hoisting refers to the process where variable and function declarations are move
 to the top of their containing scope (global or function scope) during the creation
 phase of the execution context. However, only declarations are hoisted, not 
 initializations (variables are not assigned)
+
+Single-threaded
+JavaScript is single-threaded, meaning it can only execute one command at a time
+From our perspective, JavaScript behaves as single-threaded, even though the 
+browser can handle other tasks (like rendering)
+However, JavaScript itself executes synchronously in a single-threaded manner
+
+Synchronous
+Code execution happens one line at a time and in the order it's written
+This means that in JavaScript, only one thing is happening at any given moment
+Asynchronous operations (like callbacks, promises, or async/await) exist but 
+will be covered later
+
+Invocation
+Invocation refers to "running" or "calling" a function
+In JavaScript, functions are invoked by using parentheses `()`
