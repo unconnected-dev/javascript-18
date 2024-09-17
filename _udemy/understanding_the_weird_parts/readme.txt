@@ -35,3 +35,9 @@ Global Context:
 The default execution context that is created when the JavaScript engine starts
 executing code. It is not inside any function or block; hence, it's referred to
 as the "global" context
+
+Hoisting
+Hoisting refers to the process where variable and function declarations are moved 
+to the top of their containing scope (global or function scope) during the creation
+phase of the execution context. However, only declarations are hoisted, not 
+initializations (variables are not assigned)
