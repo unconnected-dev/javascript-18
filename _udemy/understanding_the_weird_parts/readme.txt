@@ -36,7 +36,7 @@ for organizing related data (often referred to as key-value pairs). It allows fo
 objects within other objects to represent more complex data structures
 
 
-Global Context:
+Global Context
 The default execution context that is created when the JavaScript engine starts
 executing code. It is not inside any function or block; hence, it's referred to
 as the "global" context
@@ -71,3 +71,72 @@ In JavaScript, functions are invoked by using parentheses `()`
 Variable Environment
 The variable environment refers to the place where variables are stored in memory
 It defines how variables relate to each other within different scopes and contexts
+
+
+Asynchronous
+Asynchronous means that more than one thing can happen at a time, but this 
+concept is handled outside the core JavaScript engine. While JavaScript itself
+is single-threaded and synchronous, the environment can handle asynchronous tasks
+
+What happens inside the JavaScript engine is synchronous (one task at a time).
+However, other parts of the browser, like rendering, handling user input, and 
+fetching data, can operate asynchronously
+
+
+Event Queue (Task Queue)
+The event queue (also known as the task queue) is where events are stored when
+they need to be processed by the JavaScript engine. When an asynchronous event
+(like a click or timer) occurs, the browser places it in the event queue to be
+processed later
+
+
+Event Loop
+The event loop is responsible for checking the event queue. JavaScript checks 
+the event queue only when the execution stack is empty. This means that the
+current task (whatever is running in the execution stack) must finish before
+JavaScript processes any events in the queue
+
+
+Execution Stack
+The execution stack is where JavaScript keeps track of what function is currently
+running. When you call a function, a new execution context is created and pushed 
+onto the stack. JavaScript will only look at the event queue once the execution 
+stack is empty (i.e., no other tasks are running)
+
+
+Long-running functions
+A function that takes a long time to execute can block the execution stack and prevent
+JavaScript from checking the event queue. This means asynchronous events like user clicks
+or timers will be delayed until the stack is empty
+
+
+Outer Environment
+Every execution context has a reference to its outer environment. The outer 
+environment is the lexical environment where the function was defined in the
+code. This reference helps the function access variables that are not defined 
+inside its own scope
+
+
+Scope Chain
+The scope chain is a chain of outer references, where each execution context is 
+linked to its outer environment, allowing access to variables from higher scopes
+
+
+Scope
+Scope determines where a variable is accessible in your code and whether it 
+refers to the same variable or a new copy. Functions have their own local scope
+and variables declared inside a function are not accessible outside of it
+
+
+Block Scoping with `let` and `const`
+Variables declared with `let` and `const` have block scope, meaning they are 
+only accessible within the block (e.g., `{}`) they are declared in.
+`let` and `const` are not hoisted to the top of their block like `var`, so 
+they cannot be accessed before their declaration
+
+
+Temporal Dead Zone (TDZ)
+During the execution phase, variables declared with `let` and `const` are 
+placed in memory but are not initialized. They remain in a "temporal dead zone"
+until the line of code that declares the variable is executed. This means you
+cannot use the variable before its declaration line is reached
