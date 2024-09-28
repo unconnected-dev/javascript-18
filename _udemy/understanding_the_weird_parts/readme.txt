@@ -169,3 +169,28 @@ Additionally, ES6 (ECMAScript 2015) introduced a new primitive type:
     6. symbol
 
 
+Operator
+An operator in JavaScript is a special function, but it is written using a 
+different syntax. Operators typically take two operands (parameters) and 
+return one result
+
+
+Infix Notation
+JavaScript uses infix notation, meaning the operator sits between the two 
+operands
+
+
+Operator Precedence
+Precedence determines which operator is evaluated first in an expression with 
+multiple operators. Operators with higher precedence are evaluated before 
+operators with lower precedence
+
+
+Associativity
+Associativity defines the order in which operators of the same precedence level
+are evaluated. It can be either:
+    Left-to-right (left associativity)
+    Right-to-left (right associativity)
+
+In cases where operators have the same precedence, associativity determines 
+the order
