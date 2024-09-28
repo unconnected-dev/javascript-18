@@ -1,5 +1,7 @@
 https://www.udemy.com/course/understand-javascript
 https://github.com/AnthonyPAlicea/JavascriptUnderstandingTheWeirdParts
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence#table
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
 
 
 
@@ -140,3 +142,30 @@ During the execution phase, variables declared with `let` and `const` are
 placed in memory but are not initialized. They remain in a "temporal dead zone"
 until the line of code that declares the variable is executed. This means you
 cannot use the variable before its declaration line is reached
+
+
+Dynamic Typing
+In JavaScript, variables are dynamically typed, meaning you don't explicitly
+declare the type of data a variable holds. The JavaScript engine determines 
+the variable type at runtime, based on the value assigned to it
+
+This allows a variable to hold different types of values at different times
+during code execution
+
+
+Primitive Types
+Primitive types are basic data types in JavaScript that represent a single value
+and are not objects. They are immutable, meaning their value cannot be changed 
+once created (although you can reassign variables to new values)
+
+The five main primitive types in JavaScript:
+    1. undefined
+    2. null
+    3. boolean
+    4. number
+    5. string
+
+Additionally, ES6 (ECMAScript 2015) introduced a new primitive type:
+    6. symbol
+
+
