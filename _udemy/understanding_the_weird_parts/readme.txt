@@ -194,3 +194,9 @@ are evaluated. It can be either:
 
 In cases where operators have the same precedence, associativity determines 
 the order
+
+
+Coercion
+Coercion is the process of converting a value from one data type to another
+This happens frequently in JavaScript because it is dynamically typed, meaning
+variables can hold values of any type without explicit declarations
