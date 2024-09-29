@@ -200,3 +200,15 @@ Coercion
 Coercion is the process of converting a value from one data type to another
 This happens frequently in JavaScript because it is dynamically typed, meaning
 variables can hold values of any type without explicit declarations
+
+
+Dot Operator (.)
+The dot operator (.) is used to access object properties directly by name,
+like person.name. It’s simple and readable but only works with valid 
+property names that don’t contain spaces or special characters
+
+Computed Member Access Operator ([])
+The computed member access operator ([]) allows dynamic access to object 
+properties using a string or variable, like person['name'] or 
+person[dynamicKey]. It’s flexible and can handle property names with spaces
+or special characters

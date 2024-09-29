@@ -2,14 +2,24 @@
 
 
 
+//Dot Operator (.)
+//The dot operator (.) is used to access object properties directly by name,
+//like person.name. It’s simple and readable but only works with valid 
+//property names that don’t contain spaces or special characters
+
+//Computed Member Access Operator ([])
+//The computed member access operator ([]) allows dynamic access to object 
+//properties using a string or variable, like person['name'] or 
+//person[dynamicKey]. It’s flexible and can handle property names with spaces
+//or special characters
+
+
+
 //Objects and Functions in JavaScript
 //In other programming languages, objects and functions are usually distinct
 //concepts. However, in JavaScript, they are closely related. Functions can 
 //be properties of objects
 
-
-
-//Objects and the Dot Operator
 
 //Objects in JavaScript are collections of name-value pairs (also known as 
 //key-value pairs). These values can be of various types, including other 
