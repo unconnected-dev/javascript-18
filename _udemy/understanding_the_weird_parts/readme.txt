@@ -229,3 +229,9 @@ name separate. In JavaScript just use an object {}
 JavaScript Object Notation (JSON)
 JSON is inspired by JavaScript's object literal syntax but is used for data
 interchange between systems
+
+
+First-Class Functions in JavaScript
+In JavaScript, functions are treated as first-class citizens. This means
+functions are objects, and you can do anything with them that you can do
+with other objects
