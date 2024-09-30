@@ -207,8 +207,25 @@ The dot operator (.) is used to access object properties directly by name,
 like person.name. It’s simple and readable but only works with valid 
 property names that don’t contain spaces or special characters
 
+
 Computed Member Access Operator ([])
 The computed member access operator ([]) allows dynamic access to object 
 properties using a string or variable, like person['name'] or 
 person[dynamicKey]. It’s flexible and can handle property names with spaces
 or special characters
+
+
+Object Literal {}
+This is not an operator. When JavaScript encounters curly braces without a 
+function, if, or while statement, it assumes you're creating an object
+
+
+Namespace
+A namespace is a container for variables and functions, typically used to 
+avoid naming collisions by keeping variables and functions with the same 
+name separate. In JavaScript just use an object {}
+
+
+JavaScript Object Notation (JSON)
+JSON is inspired by JavaScript's object literal syntax but is used for data
+interchange between systems
