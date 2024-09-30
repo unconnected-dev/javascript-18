@@ -235,3 +235,16 @@ First-Class Functions in JavaScript
 In JavaScript, functions are treated as first-class citizens. This means
 functions are objects, and you can do anything with them that you can do
 with other objects
+
+
+Expression
+An expression is a unit of code that produces a value. It can be a part of
+a larger statement and doesn't necessarily need to be assigned to a variable
+
+
+Mutate
+To change or modify something
+
+
+Immutable
+Something that cannot be changed
