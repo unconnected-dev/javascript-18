@@ -244,8 +244,7 @@ a larger statement and doesn't necessarily need to be assigned to a variable
 
 Function Expression:
 A function expression creates a function object on the fly, and assigns it to
-a variable. The function has no name (anonymous), but can be referenced via 
-the variable name
+a variable. The function has no name (anonymous)
 
 
 Statement
@@ -279,3 +278,9 @@ Whitespace
 Whitespace includes invisible characters like spaces, tabs, and carriage 
 returns (newlines). It helps structure and format your code, making it more
 readable
+
+
+Immediately Invoked Function Expressions (IIFE)
+All functions in JavaScript are objects that contain a code property 
+(the function body) which can be invoked. In some cases, we can invoke a
+function immediately after it’s created
