@@ -36,7 +36,7 @@ greet.language = `english`;
 
 
 //Outputs the function's code (since functions are objects):
-console.log(`${greet}`); 
+console.log(`greet: ${greet}`); 
 
 //Accessing the custom property added to the function:
-console.log(`${greet.language}`);
+console.log(`greet.language: ${greet.language}`);
