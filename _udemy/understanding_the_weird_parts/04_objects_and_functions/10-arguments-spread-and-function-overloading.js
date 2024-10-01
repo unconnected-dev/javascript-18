@@ -101,5 +101,7 @@ function greetSpanish(fname, lname){
 
 
 //Calling the specialized greeting functions
-greetEnglish(`john`, `doe`);
-greetSpanish(`john`, `doe`);
+if(false){
+    greetEnglish(`john`, `doe`);
+    greetSpanish(`john`, `doe`);
+}

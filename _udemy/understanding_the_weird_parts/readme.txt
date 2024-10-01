@@ -258,3 +258,11 @@ To change or modify something
 
 Immutable
 Something that cannot be changed
+
+
+Function Overloading
+In some programming languages, function overloading allows you to define 
+multiple functions with the same name but with different numbers or types
+of parameters. In JavaScript, functions are objects, so true overloading is
+not possible. Each function definition with the same name will overwrite the
+previous one
