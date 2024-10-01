@@ -242,6 +242,16 @@ An expression is a unit of code that produces a value. It can be a part of
 a larger statement and doesn't necessarily need to be assigned to a variable
 
 
+Function Expression:
+A function expression creates a function object on the fly, and assigns it to
+a variable. The function has no name (anonymous), but can be referenced via 
+the variable name
+
+
+Statement
+A statement performs an action but does not return a value (e.g. if statement)
+
+
 Mutate
 To change or modify something
 
