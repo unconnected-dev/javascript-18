@@ -266,3 +266,16 @@ multiple functions with the same name but with different numbers or types
 of parameters. In JavaScript, functions are objects, so true overloading is
 not possible. Each function definition with the same name will overwrite the
 previous one
+
+
+Automatic Semicolon Insertion (ASI)
+In JavaScript, semicolons are optional. The syntax parser tries to be helpful
+ by automatically inserting semicolons where it thinks they belong, 
+especially after line breaks. This can cause issues, as it may insert 
+semicolons where you don’t want them, leading to bugs
+
+
+Whitespace
+Whitespace includes invisible characters like spaces, tabs, and carriage 
+returns (newlines). It helps structure and format your code, making it more
+readable
