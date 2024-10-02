@@ -297,3 +297,35 @@ Closures in JavaScript
 A closure is created when a function returns another function that "remembers"
 the variables from its outer (parent) scope, even after the outer function has
 finished executing
+
+
+Callback Function
+A callback is a function that is passed as an argument to another function, to
+be executed after the completion of that function. Essentially, when the outer
+function finishes its execution, it "calls back" to the callback function 
+provided
+
+
+bind
+
+The bind method creates a new function that, when called, has its `this` keyword 
+set to a specific value. This is particularly useful for passing functions as 
+callbacks while ensuring they maintain the correct context. The bind method can
+also accept additional arguments that will be prepended to the arguments provided
+to the bound function when it is called
+
+
+call
+
+The call method invokes a function with a specified this value and arguments 
+provided individually. This is useful when you want to call a function and 
+explicitly set its context. The first argument to call is the value to use as
+this, followed by any arguments the function expects
+
+
+apply
+
+The apply method is similar to call, but it accepts the arguments as an array
+(or an array-like object). This method is useful when you want to invoke a 
+function with an array of arguments. Like call, the first argument is the value
+to use as this, and the second argument is an array of arguments
