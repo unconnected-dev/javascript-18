@@ -2,7 +2,7 @@
 
 
 
-// Outer Environment:
+// Outer Environment
 // Every execution context has a reference to its outer environment. The outer
 // environment is the lexical environment where the function was defined in the
 // code. This reference helps the function access variables that are not defined 
@@ -95,7 +95,7 @@ if (true) {
 // and variables declared inside a function are not accessible outside of it.
 
 
-  
+
 // Block Scoping with `let` and `const`
 // Variables declared with `let` and `const` have block scope, meaning they are 
 // only accessible within the block (e.g., `{}`) they are declared in.
@@ -103,7 +103,7 @@ if (true) {
 // they cannot be accessed before their declaration.
 
 
-  
+
 // Temporal Dead Zone (TDZ)
 // During the execution phase, variables declared with `let` and `const` are 
 // placed in memory but are not initialized. They remain in a "temporal dead zone"

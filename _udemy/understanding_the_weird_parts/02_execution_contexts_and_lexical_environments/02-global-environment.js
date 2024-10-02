@@ -4,7 +4,7 @@
 
 // Execution Context (Global)
 
-// Global Context:
+// Global Context
 // The default execution context that is created when the JavaScript engine 
 // starts executing code. It is not inside any function or block; hence, it's 
 // referred to as the "global" context.
@@ -23,14 +23,18 @@
 
 
 // In the global context, `this` refers to the global object
-console.log(`'this' value: ${this}`);
-console.log(this);
+if(false){
+    console.log(`'this' value: ${this}`);
+    console.log(this);
+}
 
 
 // In browsers, `window` is the global object. Each browser tab runs in its own 
 // execution context. If the code is run in a Node.js environment, `this` would 
 // refer to the Node.js global object instead of `window`.
-console.log(window);
+if(false){
+    console.log(window);
+}
 
 
 // Variable declared in the global context
@@ -44,9 +48,10 @@ function b() {}
 // attached to the global object. They become properties of the global object 
 // (e.g., `window.a` or `window.b` in a browser).
 
-console.log(window);        // The global object (window in browsers)
-console.log(`${a}`);        // Logs the value of variable `a`
-console.log(`${window.a}`); // Logs the value of `a` via the global object
+console.log(`window: ${window}`);     // The global object (window in browsers)
+console.log(`a: ${a}`);               // Logs the value of variable `a`
+console.log(`window.a: ${window.a}`); // Logs the value of `a` via the global object
+
 
 
 // Each time JavaScript code is executed, an execution context is created. The 

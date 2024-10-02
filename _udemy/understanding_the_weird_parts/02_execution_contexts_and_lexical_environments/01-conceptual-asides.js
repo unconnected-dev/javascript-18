@@ -45,5 +45,4 @@ let some_address_object = {
         Number: 301
     }
 }
-
-console.log(some_address_object);
+console.log(`some_address_object: ${some_address_object}`);

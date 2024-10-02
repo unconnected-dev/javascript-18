@@ -19,7 +19,7 @@ function b() {
     console.log(`Called b`);
 }
 
-b();                  // Invokes the function again after it's declared
+b();                     // Invokes the function again after it's declared
 console.log(`a: ${a}`);  // Now logs 'Hello World' since `a` has been initialized
 
 

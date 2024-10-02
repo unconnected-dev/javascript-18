@@ -11,11 +11,10 @@ is valid. It converts your code into a format that the computer can execute
 (often called an abstract syntax tree)
 
 
-Lexical environment
-The environment where variables and functions live in your code at a specific
-place and time. It refers to the physical location of the code in terms of its
-hierarchy and scope. It is created whenever code is executed in JavaScript
-(functions, blocks, etc.)
+Global Context
+The default execution context that is created when the JavaScript engine starts
+executing code. It is not inside any function or block; hence, it's referred to
+as the "global" context
 
 
 Execution context
@@ -27,24 +26,24 @@ context is created first, followed by function execution contexts as functions
 are invoked
 
 
-Name / value pair
-A name that maps to a value. The name can be defined multiple times in different
-contexts, but in any single context, it can only hold one value. The value can
-be another name/value pair (for example, when an object contains other objects
-or arrays)
+Outer Environment
+Every execution context has a reference to its outer environment. The outer
+environment is the lexical environment where the function was defined in the
+code. This reference helps the function access variables that are not defined
+inside its own scope
 
 
-Object
-A collection of name/value pairs. In JavaScript, an object is the most basic
-structure for organizing related data (often referred to as key-value pairs).
-It allows for nesting objects within other objects to represent more complex
-data structures
+Lexical environment
+The environment where variables and functions live in your code at a specific
+place and time. It refers to the physical location of the code in terms of its
+hierarchy and scope. It is created whenever code is executed in JavaScript
+(functions, blocks, etc.)
 
 
-Global Context
-The default execution context that is created when the JavaScript engine starts
-executing code. It is not inside any function or block; hence, it's referred to
-as the "global" context
+Variable Environment
+The variable environment refers to the place where variables are stored in
+memory. It defines how variables relate to each other within different scopes
+and contexts
 
 
 Hoisting
@@ -54,72 +53,18 @@ the creation phase of the execution context. However, only declarations are
 hoisted, not initializations (variables are not assigned)
 
 
-Single-threaded
-JavaScript is single-threaded, meaning it can only execute one command at a
-time. From our perspective, JavaScript behaves as single-threaded, even though
-the browser can handle other tasks (like rendering). However, JavaScript itself
-executes synchronously in a single-threaded manner
+Object
+A collection of name/value pairs. In JavaScript, an object is the most basic
+structure for organizing related data (often referred to as key-value pairs).
+It allows for nesting objects within other objects to represent more complex
+data structures
 
 
-Synchronous
-Code execution happens one line at a time and in the order it's written. This
-means that in JavaScript, only one thing is happening at any given moment.
-Asynchronous operations (like callbacks, promises, or async/await) exist but
-will be covered later
-
-
-Invocation
-Invocation refers to "running" or "calling" a function. In JavaScript, functions
-are invoked by using parentheses ()
-
-
-Variable Environment
-The variable environment refers to the place where variables are stored in
-memory. It defines how variables relate to each other within different scopes
-and contexts
-
-
-Asynchronous
-Asynchronous means that more than one thing can happen at a time, but this
-concept is handled outside the core JavaScript engine. While JavaScript itself
-is single-threaded and synchronous, the environment can handle asynchronous
-tasks. What happens inside the JavaScript engine is synchronous (one task at a
-time). However, other parts of the browser, like rendering, handling user input,
-and fetching data, can operate asynchronously
-
-
-Event Queue (Task Queue)
-The event queue (also known as the task queue) is where events are stored when
-they need to be processed by the JavaScript engine. When an asynchronous event
-(like a click or timer) occurs, the browser places it in the event queue to be
-processed later
-
-
-Event Loop
-The event loop is responsible for checking the event queue. JavaScript checks
-the event queue only when the execution stack is empty. This means that the
-current task (whatever is running in the execution stack) must finish before
-JavaScript processes any events in the queue
-
-
-Execution Stack
-The execution stack is where JavaScript keeps track of what function is
-currently running. When you call a function, a new execution context is created
-and pushed onto the stack. JavaScript will only look at the event queue once
-the execution stack is empty (i.e., no other tasks are running)
-
-
-Long-running functions
-A function that takes a long time to execute can block the execution stack and
-prevent JavaScript from checking the event queue. This means asynchronous events
-like user clicks or timers will be delayed until the stack is empty
-
-
-Outer Environment
-Every execution context has a reference to its outer environment. The outer
-environment is the lexical environment where the function was defined in the
-code. This reference helps the function access variables that are not defined
-inside its own scope
+Name / value pair
+A name that maps to a value. The name can be defined multiple times in different
+contexts, but in any single context, it can only hold one value. The value can
+be another name/value pair (for example, when an object contains other objects
+or arrays)
 
 
 Scope Chain
@@ -147,6 +92,61 @@ until the line of code that declares the variable is executed. This means you
 cannot use the variable before its declaration line is reached
 
 
+Execution Stack
+The execution stack is where JavaScript keeps track of what function is
+currently running. When you call a function, a new execution context is created
+and pushed onto the stack. JavaScript will only look at the event queue once
+the execution stack is empty (i.e., no other tasks are running)
+
+
+Event Loop
+The event loop is responsible for checking the event queue. JavaScript checks
+the event queue only when the execution stack is empty. This means that the
+current task (whatever is running in the execution stack) must finish before
+JavaScript processes any events in the queue
+
+
+Event Queue (Task Queue)
+The event queue (also known as the task queue) is where events are stored when
+they need to be processed by the JavaScript engine. When an asynchronous event
+(like a click or timer) occurs, the browser places it in the event queue to be
+processed later
+
+
+Long-running functions
+A function that takes a long time to execute can block the execution stack and
+prevent JavaScript from checking the event queue. This means asynchronous events
+like user clicks or timers will be delayed until the stack is empty
+
+
+Single-threaded
+JavaScript is single-threaded, meaning it can only execute one command at a
+time. From our perspective, JavaScript behaves as single-threaded, even though
+the browser can handle other tasks (like rendering). However, JavaScript itself
+executes synchronously in a single-threaded manner
+
+
+Synchronous
+Code execution happens one line at a time and in the order it's written. This
+means that in JavaScript, only one thing is happening at any given moment.
+Asynchronous operations (like callbacks, promises, or async/await) exist but
+will be covered later
+
+
+Asynchronous
+Asynchronous means that more than one thing can happen at a time, but this
+concept is handled outside the core JavaScript engine. While JavaScript itself
+is single-threaded and synchronous, the environment can handle asynchronous
+tasks. What happens inside the JavaScript engine is synchronous (one task at a
+time). However, other parts of the browser, like rendering, handling user input,
+and fetching data, can operate asynchronously
+
+
+Invocation
+Invocation refers to "running" or "calling" a function. In JavaScript, functions
+are invoked by using parentheses ()
+
+
 Dynamic Typing
 In JavaScript, variables are dynamically typed, meaning you don't explicitly
 declare the type of data a variable holds. The JavaScript engine determines the
@@ -169,6 +169,12 @@ The five main primitive types in JavaScript:
 
 Additionally, ES6 (ECMAScript 2015) introduced a new primitive type:
     symbol
+
+
+Coercion
+Coercion is the process of converting a value from one data type to another.
+This happens frequently in JavaScript because it is dynamically typed, meaning
+variables can hold values of any type without explicit declarations
 
 
 Operator
@@ -196,12 +202,6 @@ are evaluated. It can be either:
 
 In cases where operators have the same precedence, associativity determines the
 order
-
-
-Coercion
-Coercion is the process of converting a value from one data type to another.
-This happens frequently in JavaScript because it is dynamically typed, meaning
-variables can hold values of any type without explicit declarations
 
 
 Dot Operator (.)
@@ -243,7 +243,7 @@ An expression is a unit of code that produces a value. It can be a part of a
 larger statement and doesn't necessarily need to be assigned to a variable
 
 
-Function Expression:
+Function Expression
 A function expression creates a function object on the fly, and assigns it to a
 variable. The function has no name (anonymous)
 

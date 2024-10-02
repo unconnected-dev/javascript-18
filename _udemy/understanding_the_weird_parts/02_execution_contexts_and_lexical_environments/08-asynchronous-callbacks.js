@@ -32,7 +32,7 @@
 
 
   
-// Event Processing Flow
+// Event Processing Flow:
 // - When an event occurs (like a click or a timeout), it is added to the event queue
 // - JavaScript continues running synchronous code in the execution stack
 // - Once the stack is empty, the event loop checks the event queue
@@ -73,17 +73,17 @@ console.log(`Finished execution`);
 
 
 
-// Long-running functions:
+// Long-running functions
 // A function that takes a long time to execute (like `waitThreeSeconds()`) 
 // can block the execution stack and prevent JavaScript from checking the 
 // event queue. This means asynchronous events like user clicks or timers 
 // will be delayed until the stack is empty.
 
-// Event Queue and Event Loop:
+// Event Queue and Event Loop
 // The event loop constantly checks if the execution stack is empty, and if it 
 // is, it processes the next event from the event queue.
   
-// Synchronous vs. Asynchronous:
+// Synchronous vs. Asynchronous
 // JavaScript handles synchronous code in the execution stack first and only 
 // deals with asynchronous events from the event queue after the stack is clear. 
 // This is why JavaScript behaves synchronously, even though it can handle 
