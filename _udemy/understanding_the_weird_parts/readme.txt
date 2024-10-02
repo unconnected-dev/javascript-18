@@ -221,15 +221,15 @@ This is not an operator. When JavaScript encounters curly braces without a
 function, if, or while statement, it assumes you're creating an object
 
 
+JavaScript Object Notation (JSON)
+JSON is inspired by JavaScript's object literal syntax but is used for data
+interchange between systems
+
+
 Namespace
 A namespace is a container for variables and functions, typically used to avoid
 naming collisions by keeping variables and functions with the same name separate.
 In JavaScript, just use an object {}
-
-
-JavaScript Object Notation (JSON)
-JSON is inspired by JavaScript's object literal syntax but is used for data
-interchange between systems
 
 
 First-Class Functions in JavaScript
@@ -238,9 +238,12 @@ functions are objects, and you can do anything with them that you can do with
 other objects
 
 
-Expression
-An expression is a unit of code that produces a value. It can be a part of a
-larger statement and doesn't necessarily need to be assigned to a variable
+Function Overloading
+In some programming languages, function overloading allows you to define
+multiple functions with the same name but with different numbers or types of
+parameters. In JavaScript, functions are objects, so true overloading is not
+possible. Each function definition with the same name will overwrite the
+previous one
 
 
 Function Expression
@@ -248,24 +251,51 @@ A function expression creates a function object on the fly, and assigns it to a
 variable. The function has no name (anonymous)
 
 
-Statement
-A statement performs an action but does not return a value (e.g. if statement)
+Immediately Invoked Function Expressions (IIFE)
+All functions in JavaScript are objects that contain a code property (the
+function body) which can be invoked. In some cases, we can invoke a function
+immediately after it’s created
 
 
-Mutate
-To change or modify something
+Closures in JavaScript
+A closure is created when a function returns another function that "remembers"
+the variables from its outer (parent) scope, even after the outer function has
+finished executing
 
 
-Immutable
-Something that cannot be changed
+Function Factories
+A function factory is a function that creates and returns other functions. The
+returned function often relies on the variables from the outer function’s scope,
+creating a closure
 
 
-Function Overloading
-In some programming languages, function overloading allows you to define
-multiple functions with the same name but with different numbers or types of
-parameters. In JavaScript, functions are objects, so true overloading is not
-possible. Each function definition with the same name will overwrite the
-previous one
+Callback Function
+A callback is a function that is passed as an argument to another function, to
+be executed after the completion of that function. Essentially, when the outer
+function finishes its execution, it "calls back" to the callback function 
+provided
+
+
+bind
+The bind method creates a new function that, when called, has its `this` keyword 
+set to a specific value. This is particularly useful for passing functions as 
+callbacks while ensuring they maintain the correct context. The bind method can
+also accept additional arguments that will be prepended to the arguments provided
+to the bound function when it is called
+
+
+call
+The call method invokes a function with a specified this value and arguments 
+provided individually. This is useful when you want to call a function and 
+explicitly set its context. The first argument to call is the value to use as
+this, followed by any arguments the function expects
+
+
+apply
+The apply method is similar to call, but it accepts the arguments as an array
+(or an array-like object). This method is useful when you want to invoke a 
+function with an array of arguments. Like call, the first argument is the value
+to use as this, and the second argument is an array of arguments
 
 
 Automatic Semicolon Insertion (ASI)
@@ -280,52 +310,18 @@ Whitespace includes invisible characters like spaces, tabs, and carriage
 returns (newlines). It helps structure and format your code, making it more
 readable
 
-
-Immediately Invoked Function Expressions (IIFE)
-All functions in JavaScript are objects that contain a code property (the
-function body) which can be invoked. In some cases, we can invoke a function
-immediately after it’s created
+Expression
+An expression is a unit of code that produces a value. It can be a part of a
+larger statement and doesn't necessarily need to be assigned to a variable
 
 
-Function Factories
-A function factory is a function that creates and returns other functions. The
-returned function often relies on the variables from the outer function’s scope,
-creating a closure
+Statement
+A statement performs an action but does not return a value (e.g. if statement)
 
 
-Closures in JavaScript
-A closure is created when a function returns another function that "remembers"
-the variables from its outer (parent) scope, even after the outer function has
-finished executing
+Mutate
+To change or modify something
 
 
-Callback Function
-A callback is a function that is passed as an argument to another function, to
-be executed after the completion of that function. Essentially, when the outer
-function finishes its execution, it "calls back" to the callback function 
-provided
-
-
-bind
-
-The bind method creates a new function that, when called, has its `this` keyword 
-set to a specific value. This is particularly useful for passing functions as 
-callbacks while ensuring they maintain the correct context. The bind method can
-also accept additional arguments that will be prepended to the arguments provided
-to the bound function when it is called
-
-
-call
-
-The call method invokes a function with a specified this value and arguments 
-provided individually. This is useful when you want to call a function and 
-explicitly set its context. The first argument to call is the value to use as
-this, followed by any arguments the function expects
-
-
-apply
-
-The apply method is similar to call, but it accepts the arguments as an array
-(or an array-like object). This method is useful when you want to invoke a 
-function with an array of arguments. Like call, the first argument is the value
-to use as this, and the second argument is an array of arguments
+Immutable
+Something that cannot be changed
