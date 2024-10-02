@@ -287,13 +287,13 @@ function body) which can be invoked. In some cases, we can invoke a function
 immediately after it’s created
 
 
-Closures in JavaScript
-A closure is created when a function returns another function that "remembers"
-the variables from its outer (parent) scope, even after the outer function has
-finished executing
-
-
 Function Factories
 A function factory is a function that creates and returns other functions. The
 returned function often relies on the variables from the outer function’s scope,
 creating a closure
+
+
+Closures in JavaScript
+A closure is created when a function returns another function that "remembers"
+the variables from its outer (parent) scope, even after the outer function has
+finished executing
