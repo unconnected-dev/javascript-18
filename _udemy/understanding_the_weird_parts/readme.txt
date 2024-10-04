@@ -67,6 +67,25 @@ be another name/value pair (for example, when an object contains other objects
 or arrays)
 
 
+Prototype
+All objects in JavaScript have a `prototype` property. This property is a
+reference to another object, often called `__proto__`.
+
+The `prototype` is the source from which objects can inherit properties 
+and methods. When an object tries to access a property or method and can't
+find it, JavaScript will look in the object's `prototype` (its `__proto__`).
+
+
+Prototype Chain
+A prototype can also have its own prototype, forming a chain. This is called
+the prototype chain. Prototype chaining allows objects to share properties 
+and methods, rather than duplicating them.
+
+It's hidden in the sense that we don't call `obj.__proto__.method`. Instead,
+we just call `obj.method`, and JavaScript will look up the  prototype chain 
+if the method isn't found on the object itself.
+
+
 Scope Chain
 The scope chain is a chain of outer references, where each execution context is
 linked to its outer environment, allowing access to variables from higher scopes
