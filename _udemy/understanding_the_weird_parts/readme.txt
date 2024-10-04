@@ -344,3 +344,8 @@ To change or modify something
 
 Immutable
 Something that cannot be changed
+
+
+Reflection
+Reflection allows an object to inspect itself, listing and even changing
+its properties and methods.
