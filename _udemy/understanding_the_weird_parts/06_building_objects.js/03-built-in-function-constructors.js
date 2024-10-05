@@ -93,13 +93,13 @@ if(false){
 // It's better to use primitive values directly instead of using objects 
 // created with constructors like `new Number()`.
 
-
 // Conversion without creating an object
 // Here, we just return the number 2 as a primitive, not as an object.
 if(false){
     var g = Number("2");
     console.log(`g: ${g}`);
 }
+
 
 
 // Syntactic Sugar
