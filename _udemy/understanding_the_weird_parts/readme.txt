@@ -2,6 +2,7 @@ https://www.udemy.com/course/understand-javascript
 https://github.com/AnthonyPAlicea/JavascriptUnderstandingTheWeirdParts
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence#table
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 
 
 
@@ -329,6 +330,7 @@ Whitespace includes invisible characters like spaces, tabs, and carriage
 returns (newlines). It helps structure and format your code, making it more
 readable
 
+
 Expression
 An expression is a unit of code that produces a value. It can be a part of a
 larger statement and doesn't necessarily need to be assigned to a variable
@@ -349,3 +351,23 @@ Something that cannot be changed
 Reflection
 Reflection allows an object to inspect itself, listing and even changing
 its properties and methods.
+
+
+Method chaining
+A technique where multiple methods are called in a single line. Each method
+affects the parent object and returns the object itself.
+Example: obj.method1().method2(), where both methods modify the same object,
+allowing for fluid, chainable code execution.
+
+
+Transpile
+The process of converting one programming language's syntax to another. In 
+modern development, we often transpile languages like TypeScript or modern
+JavaScript (ES6+) down to older versions of JavaScript to ensure compatibility
+with older browsers or environments.
+
+
+Binding
+Refers to the association between a variable name and a specific memory location.
+In programming, binding ensures that a variable points to the correct value in memory.
+For example, a function's `this` keyword refers to the object it is bound to.
