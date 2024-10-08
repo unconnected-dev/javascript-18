@@ -89,3 +89,16 @@ classes are syntactic sugar over the prototype-based inheritance system that
 has always existed in the language. Under the hood, a class in JavaScript is 
 still just a special kind of function that sets up the prototype chain in a 
 more intuitive way.
+
+
+Field:
+A field in JavaScript is a property that is created using the field syntax
+directly within a class. Fields are similar to properties, but the term "field"
+specifically refers to properties defined inside a class using the new syntax.
+
+
+Public Instance Fields:
+Public instance fields are properties that are created on each instance of
+the class. Unlike traditional properties, which are usually initialized in the 
+constructor, public instance fields can be defined and initialized directly in 
+the class body.
