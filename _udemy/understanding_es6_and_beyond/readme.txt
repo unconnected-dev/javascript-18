@@ -57,3 +57,15 @@ Mutable Values
 If a const variable points to an object or array, the contents of that 
 object or array can still be modified. The immutability applies only 
 to the variable's binding, not the value it holds.
+
+
+Template Strings (Template Literals)
+Template strings (or template literals) are a feature in ES6 that provides 
+an easier and more readable way to work with strings, especially when 
+dealing with multi-line strings or embedding variables and expressions 
+within strings.
+
+
+Expression Interpolation
+You can embed variables or any valid JavaScript expressions directly 
+within a template string using ${}.
