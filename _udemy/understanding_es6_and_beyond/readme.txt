@@ -81,3 +81,11 @@ the interpolated values and literal strings. The tagged function receives an
 array of the literal parts of the template string and the interpolated values
 as arguments.
 
+
+Syntactic Sugar
+The term "syntactic sugar" refers to a feature that makes code easier to 
+read and write, but doesn't add new functionality to the language. JavaScript
+classes are syntactic sugar over the prototype-based inheritance system that
+has always existed in the language. Under the hood, a class in JavaScript is 
+still just a special kind of function that sets up the prototype chain in a 
+more intuitive way.
