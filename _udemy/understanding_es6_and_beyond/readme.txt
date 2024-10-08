@@ -59,13 +59,25 @@ object or array can still be modified. The immutability applies only
 to the variable's binding, not the value it holds.
 
 
+Interpolation 
+Interpolation is the process of embedding or inserting variables or 
+expressions into a string. 
+
+
 Template Strings (Template Literals)
-Template strings (or template literals) are a feature in ES6 that provides 
-an easier and more readable way to work with strings, especially when 
-dealing with multi-line strings or embedding variables and expressions 
-within strings.
+Template strings (or template literals) in JavaScript make interpolation 
+straightforward, allowing you to inject values directly into a string 
+without the need for concatenation.
 
 
 Expression Interpolation
 You can embed variables or any valid JavaScript expressions directly 
 within a template string using ${}.
+
+
+Tagged Templates
+A more advanced form of template strings where you can process and manipulate
+the interpolated values and literal strings. The tagged function receives an
+array of the literal parts of the template string and the interpolated values
+as arguments.
+
