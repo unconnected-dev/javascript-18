@@ -8,13 +8,13 @@
 // const are not hoisted to the top of their block like var, so they cannot be
 // accessed before their declaration
 
-// Variable scope in JavaScript is defined lexically by a block, typically using 
-// curly braces.
+// Variable scope in JavaScript is defined lexically by a block, typically 
+// using curly braces.
 
 // Lexical environments
-// A new lexical environment is created with each block. In ES6, variables declared
-// with `let` and `const` are block-scoped, meaning they are only accessible 
-// within the block they are defined in.
+// A new lexical environment is created with each block. In ES6, variables 
+// declared with `let` and `const` are block-scoped, meaning they are only
+// accessible within the block they are defined in.
 
 let a = 1, b = 1, c = 1;
 

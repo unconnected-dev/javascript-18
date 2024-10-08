@@ -45,3 +45,15 @@ variable name conflicts.
 Variable Shadowing
 When a variable is declared inside a block or loop with the same name as an
 outer variable, the inner declaration shadows the outer one within that scope.
+
+
+Immutable Binding
+The primary difference between const and let is that const ensures 
+the variable binding is immutable, meaning the reference to the value 
+cannot be changed once set.
+
+
+Mutable Values
+If a const variable points to an object or array, the contents of that 
+object or array can still be modified. The immutability applies only 
+to the variable's binding, not the value it holds.
