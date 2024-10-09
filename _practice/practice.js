@@ -75,6 +75,7 @@ if(false){
     getData();
 }
 
+
 if(false){
     console.log("running file");
 
@@ -93,25 +94,52 @@ if(false){
     f();
 }
 
-if(true){
+
+if(false){
     let myObject = {
         testname: "test",
+        self: this,
 
         callme: function(){
             console.log(this);
 
-            function subcall(){
+            function subcall(self){
                 console.log(`subcall: ${this}`);
+                console.log(`subcall: ${self}`);
             }
 
-            let othercall = function(){
+            let othercall = function(self){
                 console.log(`othercall: ${this}`);
+                console.log(`othercall: ${self}`);
             }
 
-            subcall();
-            othercall();
+            subcall(this);
+            othercall(this);
         }
     }
 
     myObject.callme();
+}
+
+
+//Wanted to check if instanceFields and properties had any meaningful difference
+if(false){
+    class myObject {
+        instanceField = `instanceField`;
+
+        constructor(){
+            this.prop = `prop`;
+        }
+
+        test() {
+            console.log(`instanceField: ${this.instanceField}`);
+            console.log(`prop: ${this.prop}`);
+        }
+    }
+
+    let test = new myObject();
+    test.test();
+    test.instanceField = `john`;
+    test.prop = `doe`;
+    test.test();
 }
