@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Extending Classes and Prototypical Inheritance in JavaScript
 
 // Prototypical Inheritance:

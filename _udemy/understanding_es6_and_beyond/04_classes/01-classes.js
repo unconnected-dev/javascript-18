@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Classes in JavaScript
 
 // Introduction to Classes:

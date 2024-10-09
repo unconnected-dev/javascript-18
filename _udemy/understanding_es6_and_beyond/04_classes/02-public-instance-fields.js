@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Public Instance Fields in JavaScript
 
 // Public:
