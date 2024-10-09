@@ -134,3 +134,10 @@ Subclassing Built-in Objects:
 JavaScript allows you to extend built-in objects like Number, Array, etc.,
 enabling you to add or customize methods while retaining the default behavior
 of these objects.
+
+
+Static Fields and Methods:
+Static fields (or properties) and methods belong to the class itself, not to
+instances of the class. They are called on the class directly, rather than on
+instances of the class. Static members are often used for utility functions, 
+constants, or data that is shared across all instances of the class.
