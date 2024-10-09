@@ -130,14 +130,19 @@ up the prototype chain. This allows for shared functionality between instances
 without duplicating code in each instance.
 
 
-Subclassing Built-in Objects:
+Subclassing Built-in Objects
 JavaScript allows you to extend built-in objects like Number, Array, etc.,
 enabling you to add or customize methods while retaining the default behavior
 of these objects.
 
 
-Static Fields and Methods:
+Static Fields and Methods
 Static fields (or properties) and methods belong to the class itself, not to
 instances of the class. They are called on the class directly, rather than on
 instances of the class. Static members are often used for utility functions, 
 constants, or data that is shared across all instances of the class.
+
+
+Arrow Functions:
+Arrow functions are a more concise way to write function expressions in 
+JavaScript. They are anonymous, meaning they do not have their own name.
