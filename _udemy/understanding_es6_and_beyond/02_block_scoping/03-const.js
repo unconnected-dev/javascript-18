@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // `const` vs `let`: Differences and Similarities
 
 // Block Scoping

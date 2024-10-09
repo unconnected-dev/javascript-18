@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Lexical Environment vs. Variable Environment
 
 // A Lexical Environment is a structure that holds identifier-variable mappings 

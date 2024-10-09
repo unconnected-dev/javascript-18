@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Block Scoping with let and const
 // Variables declared with let and const have block scope, meaning they are
 // only accessible within the block (e.g., {}) they are declared in. let and
