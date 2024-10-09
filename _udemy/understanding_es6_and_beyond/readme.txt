@@ -91,14 +91,40 @@ still just a special kind of function that sets up the prototype chain in a
 more intuitive way.
 
 
-Field:
+Field
 A field in JavaScript is a property that is created using the field syntax
 directly within a class. Fields are similar to properties, but the term "field"
 specifically refers to properties defined inside a class using the new syntax.
 
 
-Public Instance Fields:
+Public Instance Fields
 Public instance fields are properties that are created on each instance of
 the class. Unlike traditional properties, which are usually initialized in the 
 constructor, public instance fields can be defined and initialized directly in 
 the class body.
+
+
+Constructor Function
+The `constructor` is a special method in a class that is called when a new 
+instance of the class is created.
+
+
+Prototype
+Every JavaScript function (including classes) has a `prototype` property. The
+`prototype` is an object that is shared among all instances of a class or 
+constructor function. Methods defined on the `prototype` are accessible to all
+instances, enabling efficient sharing of methods and properties.
+
+
+Prototype Chain
+When an object is created from a class, it internally links to the class's 
+`prototype` object. This link forms the prototype chain, where if a property or
+method is not found on the instance itself, JavaScript looks up the chain to 
+the prototype.
+
+
+Prototype Inheritance
+Objects in JavaScript inherit properties and methods from their prototype. If
+a method or property is not found directly on an object, JavaScript will search
+up the prototype chain. This allows for shared functionality between instances 
+without duplicating code in each instance.
