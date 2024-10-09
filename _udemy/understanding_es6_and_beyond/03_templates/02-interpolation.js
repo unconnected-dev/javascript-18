@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Interpolation with Template Strings
 
 // Interpolation is the process of embedding or inserting variables or 

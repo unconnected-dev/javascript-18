@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Template Strings (Template Literals)
 
 // Template strings (or template literals) are a feature in ES6 that provides 
