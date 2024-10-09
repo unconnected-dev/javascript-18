@@ -1,6 +1,7 @@
 "use strict";
 
 
+
 // Constructor and Prototypes in JavaScript
 
 // Constructor Function:

@@ -128,3 +128,9 @@ Objects in JavaScript inherit properties and methods from their prototype. If
 a method or property is not found directly on an object, JavaScript will search
 up the prototype chain. This allows for shared functionality between instances 
 without duplicating code in each instance.
+
+
+Subclassing Built-in Objects:
+JavaScript allows you to extend built-in objects like Number, Array, etc.,
+enabling you to add or customize methods while retaining the default behavior
+of these objects.
