@@ -91,7 +91,7 @@ me2.greet();
 
 // Prototype Chain:
 // - Methods defined using arrow functions in the constructor do not go on the
-//  prototype but are instead directly on the instance. 
+//   prototype but are instead directly on the instance. 
 // - This breaks the typical JavaScript pattern where methods are shared across
 //   instances via the prototype.
 
