@@ -146,3 +146,10 @@ constants, or data that is shared across all instances of the class.
 Arrow Functions:
 Arrow functions are a more concise way to write function expressions in 
 JavaScript. They are anonymous, meaning they do not have their own name.
+
+
+Symbols
+A symbol is a unique, immutable primitive value. The uniqueness of symbols 
+helps to avoid conflicts that can occur when properties share the same name.
+In JavaScript, a symbol is a primitive data type, just like a string or 
+number.
