@@ -1,133 +1,141 @@
-
 // Wrapping everything inside an Immediately Invoked Function Expression (IIFE)
-// This ensures that Greetr is in its own scope and doesn't pollute the global scope.
+// This ensures Greetr is in its own scope and doesn't pollute the global scope.
 ;(function(global, $){
 
-    // Greetr function is a constructor function (a special kind of function to create objects)
-    // It returns a new instance of Greetr.init (see below for explanation on 'init')
-    var Greetr = function(firstName, lastName, language){
-        // 'new Greetr.init()' creates a new object with Greetr's methods and properties
+    // Greetr is a constructor function (used to create new objects).
+    // It returns a new instance of Greetr.init (defined below).
+    var Greetr = function(firstName, lastName, language) {
+        // 'new Greetr.init()' creates a new object with methods and properties.
         return new Greetr.init(firstName, lastName, language);
     }
 
-
-    //variables not exposed / hidden from develpers
-    //unless exposed to the developers, these could not be changed?
+    // Variables that are not exposed (kept private).
+    // These variables are hidden unless explicitly exposed to developers.
     var supportedLangs = ['en', 'es'];
 
     var greetings = {
-        en: `Hello`,
-        es: `Hola`
+        en: 'Hello',
+        es: 'Hola'
     };
 
     var formalGreetings = {
-        en: `Greetings`,
-        es: `Saludos`
+        en: 'Greetings',
+        es: 'Saludos'
     };
 
     var logMessages = {
-        en: `Logged in`,
-        es: `Inicio sesion`
+        en: 'Logged in',
+        es: 'Inicio sesion'
     }
 
-    // Adding methods to Greetr's prototype. 
-    // This object will hold any methods that we want all Greetr instances to share.
+
+    // Adding methods to Greetr's prototype.
+    // These methods will be shared by all instances of Greetr.
     Greetr.prototype = {
 
-        fullName: function(){
+        // Returns the full name by combining first and last name.
+        fullName: function() {
             return `${this.firstName} ${this.lastName}`;
         },
 
-        validate: function(){
-            if (supportedLangs.indexOf(this.language) === -1){
-                throw `Invalid language`;
+        // Validates if the provided language is supported.
+        validate: function() {
+            if (supportedLangs.indexOf(this.language) === -1) {
+                throw 'Invalid language';
             }
         },
 
-        greeting: function(){
+        // Returns a casual greeting based on the selected language.
+        greeting: function() {
             return `${greetings[this.language]} ${this.firstName}`;
         },
         
-        formalGreeting: function(){
+        // Returns a formal greeting based on the selected language.
+        formalGreeting: function() {
             return `${formalGreetings[this.language]} ${this.fullName()}`;
         },
 
-        greet: function(formal){
+        // Greets the user either formally or casually based on the input.
+        greet: function(formal) {
             var msg;
 
-            //if undefined or null it will be coerved to 'false'
-            if(formal){
+            // If 'formal' is undefined or null, it will default to casual.
+            if (formal) {
                 msg = this.formalGreeting();
-            } else{
+            } else {
                 msg = this.greeting();
             }
 
-            if(console){
-                console.log(`${msg}`);
+            if (console) {
+                console.log(msg);
             }
 
-            // 'this' refers to the calling object at execution time
-            // makes the method chainable
+            // 'this' refers to the calling object, enabling method chaining.
             return this;
         },
 
-        log: function(){
-            if(console){
+        // Logs a message to the console with the user's full name and language.
+        log: function() {
+            if (console) {
                 console.log(`${logMessages[this.language]}: ${this.fullName()}`);
             }
 
             return this;
         },
 
-        setLang: function(lang){
+        // Sets the language and validates it. Method is chainable.
+        setLang: function(lang) {
             this.language = lang;
             this.validate();
 
             return this;
         },
 
-        HTMLGreeting: function(selector, formal){
-            if(!$){
-                throw `jQuery not loaded`;
+        // Updates the HTML content of a selected element with a greeting message.
+        HTMLGreeting: function(selector, formal) {
+            if (!$) {
+                throw 'jQuery not loaded';
             }
 
-            if(!selector){
-                throw `Missing jQuery selector`;
+            if (!selector) {
+                throw 'Missing jQuery selector';
             }
 
             var msg;
-            if(formal){
+            if (formal) {
                 msg = this.formalGreeting();
             } else {
                 msg = this.greeting();
             }
 
+            // Updates the HTML content of the selected element with the message.
             $(selector).html(msg);
 
             return this;
         }
     };
 
+    
     // Greetr.init is the actual function that initializes (sets up) the object.
-    // Think of it as the constructor function for the Greetr object.
-    Greetr.init = function(firstName, lastName, language){
-        var self = this; // self is often used to keep the correct reference to 'this'
-        // 'this' refers to the object being created (the new Greetr object)
+    // Think of this as the constructor for Greetr objects.
+    Greetr.init = function(firstName, lastName, language) {
+        var self = this; // 'self' ensures we refer to the current object ('this').
         
-        // Assign values to the object's properties or default them if not provided
-        self.firstName = firstName || '';  // Default to an empty string if firstName is not provided
-        self.lastName = lastName || '';    // Default to an empty string if lastName is not provided
-        self.language = language || 'en';  // Default to 'en' (English) if language is not provided
+        // Set object properties or default them if no values are passed.
+        self.firstName = firstName || '';  // Default to empty string if not provided.
+        self.lastName = lastName || '';    // Default to empty string if not provided.
+        self.language = language || 'en';  // Default to 'en' if no language provided.
 
+        // Validate the provided language during initialization.
         self.validate();
     }
 
-    // Linking Greetr.init's prototype to Greetr's prototype.
-    // This means any object created by Greetr.init will have access to methods defined on Greetr.prototype.
+    // Linking Greetr.init's prototype to Greetr.prototype.
+    // This ensures instances of Greetr.init can access methods from Greetr.prototype.
     Greetr.init.prototype = Greetr.prototype;
 
-    // Exposing Greetr to the global object (window in a browser).
-    // This allows it to be accessed from anywhere using either Greetr or G$.
+    // Exposing Greetr to the global object (window in the browser).
+    // Allows Greetr or G$ to be accessed globally for creating Greetr instances.
     global.Greetr = global.G$ = Greetr;
 
-}(window, jQuery));  // 'global' refers to the window object, '$' refers to jQuery
+}(window, jQuery)); // 'global' refers to the window object, '$' refers to jQuery.
