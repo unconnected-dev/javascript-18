@@ -153,3 +153,9 @@ A symbol is a unique, immutable primitive value. The uniqueness of symbols
 helps to avoid conflicts that can occur when properties share the same name.
 In JavaScript, a symbol is a primitive data type, just like a string or 
 number.
+
+
+Promise example
+Promises provide a standardized way to handle asynchronous operations and 
+events. A promise represents a value that may be available now, in the 
+future, or never.

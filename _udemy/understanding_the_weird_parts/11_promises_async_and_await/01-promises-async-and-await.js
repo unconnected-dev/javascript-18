@@ -1,5 +1,6 @@
 "use strict";
 
+
 // Function that takes another function as a parameter (callback pattern)
 // Demonstrates how a function can be passed and executed as a callback.
 if (false) {
@@ -19,9 +20,11 @@ if (false) {
 }
 
 
+
 // Promise example
-// Promises provide a standardized way to handle asynchronous operations and events.
-// A promise represents a value that may be available now, in the future, or never.
+// Promises provide a standardized way to handle asynchronous operations and 
+// events. A promise represents a value that may be available now, in the 
+// future, or never.
 
 // Breakdown of how a basic promise works (excluding error handling).
 if (false) {
@@ -31,10 +34,11 @@ if (false) {
 
     // Custom implementation of a promise
     function CustomPromise(executor) {
-        let state = PENDING; // Initial state is pending
-        let value = null; // Holds the eventual resolved or rejected value
-        let handlers = []; // Array to store success handlers (for .then)
-        let catches = []; // Array to store error handlers (for .catch)
+        let state = PENDING;    // Initial state is pending
+        let value = null;       // Holds the eventual resolved or rejected value
+        let handlers = [];      // Array to store success handlers (for .then)
+        let catches = [];       // Array to store error handlers (for .catch)
+
 
         // Resolve function (called by the executor)
         function resolve(result) {
@@ -99,6 +103,7 @@ if (false) {
 }
 
 
+
 // Example using native JavaScript Promise
 // This demonstrates how to avoid callback nesting by using promise chaining.
 if (true) {
@@ -111,6 +116,7 @@ if (true) {
     };
 
     let someText = new Promise(doWork);
+
 
     // Optional: using chaining to avoid nesting of callbacks
     if (false) {
@@ -126,17 +132,19 @@ if (true) {
         });
     }
 
+
     if (false) {
         // This shows how .then chaining works with promises.
         someText
             .then((val) => {
                 console.log(`1: ${val}`);
-                return `How are you???`; // Return value gets passed to next .then
+                return `How are you???`;    // Return value gets passed to next .then
             })
             .then((val) => {
-                console.log(`2: ${val}`); // Logs the return from the previous .then
+                console.log(`2: ${val}`);   // Logs the return from the previous .then
             });
     }
+
 
     if (false) {
         // Chain promises to handle multiple async operations in sequence
@@ -156,8 +164,8 @@ if (true) {
 // A somewhat real-world example of using fetch API with Promises
 if (false) {
     fetch("video.json")
-        .then(response => response.json()) // Parse response as JSON
-        .then(data => console.log(`data: ${data}`)); // Handle the parsed data
+        .then(response => response.json())              // Parse response as JSON
+        .then(data => console.log(`data: ${data}`));    // Handle the parsed data
 }
 
 
@@ -176,6 +184,7 @@ if (false) {
 }
 
 
+
 // Using async/await for more readable asynchronous code
 // Async/await is syntactic sugar for promises, making code more linear and easier to follow.
 if (true) {
@@ -189,15 +198,15 @@ if (true) {
 
     // Async function that awaits the result of multiple promises in sequence
     async function doAllTheWork() {
-        const someText = new Promise(doWork); // Initiates the first async task
-        const text1 = await someText; // Waits for the first promise to resolve
+        const someText = new Promise(doWork);       // Initiates the first async task
+        const text1 = await someText;               // Waits for the first promise to resolve
         console.log(`1: ${text1}`);
 
         const otherText = new Promise(doOtherWork); // Initiates the second async task
-        const text2 = await otherText; // Waits for the second promise to resolve
+        const text2 = await otherText;              // Waits for the second promise to resolve
         console.log(`2: ${text2}`);
     }
 
-    doAllTheWork(); // Calls the async function
-    console.log(`Done`); // This will log immediately as doAllTheWork is async
+    doAllTheWork();         // Calls the async function
+    console.log(`Done`);    // This will log immediately as doAllTheWork is async
 }
