@@ -29,7 +29,11 @@ if(false){
     }
 }
 
-if(true){
+// Stores numbers inside a map
+// Maps preserve insertion order whether keys are strings, numbers or any other data type
+// Object literals maintain insertion order for string and symbol keys but numeric keys
+// may be ordered differently
+if(false){
     function twoSum(nums, target){
         const storedIndicies = new Map();
 
@@ -41,6 +45,20 @@ if(true){
                 return [key, storedIndicies.get(targetMinsNum)];
             } else {
                 storedIndicies.set(num, key);
+            }
+        }
+    }
+}
+
+// Double loops through the nums array
+if(true){
+    function twoSum(nums, target){
+        const n = nums.length;
+        for(let i = 0; i < n; i++){
+            for(let j = i + 1; j < n; j++){
+                if(nums[i] + nums[j] === target){
+                    return [i, j];
+                }
             }
         }
     }
