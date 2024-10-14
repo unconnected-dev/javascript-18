@@ -12,7 +12,7 @@ const caseTarget_3 = 6
 
 // Stores numbers inside an object literal as it loops through once
 // Checks against that object literal for the second number that adds up to the target
-if(true){
+if(false){
     function twoSum(nums, target){
         const storedIndicies = {};
 
@@ -24,6 +24,23 @@ if(true){
                 return [key, storedIndicies[targetMinsNum]];
             } else {
                 storedIndicies[num] = key;
+            }
+        }
+    }
+}
+
+if(true){
+    function twoSum(nums, target){
+        const storedIndicies = new Map();
+
+        for(let key = 0; key < nums.length; key++){
+            const num = nums[key];
+            const targetMinsNum = target - num;
+
+            if(storedIndicies.has(targetMinsNum)){
+                return [key, storedIndicies.get(targetMinsNum)];
+            } else {
+                storedIndicies.set(num, key);
             }
         }
     }
