@@ -51,7 +51,7 @@ if(false){
 }
 
 // Double loops through the nums array
-if(true){
+if(false){
     function twoSum(nums, target){
         const n = nums.length;
         for(let i = 0; i < n; i++){
@@ -61,6 +61,27 @@ if(true){
                 }
             }
         }
+    }
+}
+
+// Wrapping function inside an immediately invoked function expression
+// Just for fun
+if(true){
+    function twoSum(nums, target){
+        return (function(nums, target){
+            const storedIndicies = {};
+
+            for(let key = 0; key < nums.length; key++){
+                let num = nums[key];
+                let targetMinsNum = target - num;
+    
+                if(targetMinsNum in storedIndicies){
+                    return [key, storedIndicies[targetMinsNum]];
+                } else {
+                    storedIndicies[num] = key;
+                }
+            }
+        }(nums, target));
     }
 }
 
