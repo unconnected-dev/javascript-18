@@ -14,10 +14,8 @@ if(false){
             return 0;
         }
 
-        let i = 0;
-        let j = 0;
+        let i = 0, j = 0, res = 0;
         const mySet = new Set();
-        let res = 0;
 
         while(j < s.length){
             if(!mySet.has(s[j])){
@@ -46,8 +44,7 @@ if(false){
             return 0;
         }
 
-        let res = 0;
-        let curr = "";
+        let res = 0, curr = "";
 
         for(k in s){
             const c = s[k];
@@ -66,20 +63,20 @@ if(false){
     };
 }
 
-// Sliding window counter
-// Moves left to right
-// Slower than other solutions
+// Sliding window counter.
+// Moves left to right.
+// Slower than other solutions.
 if(true){
     var lengthOfLongestSubstring = function(s) {
         let counter = {};
         let left = 0, maxLength = 0;
 
         for(let right = 0; right < s.length; right++){
-            let val = s.charAt(right);
-            counter[val] = (counter[val] || 0) + 1;
+            const c = s.charAt(right);
+            counter[c] = (counter[c] || 0) + 1;
 
-            if(counter[val] > 1){
-                while(left < right && counter[val] > 1){
+            if(counter[c] > 1){
+                while(left < right && counter[c] > 1){
                     counter[s.charAt(left)] -= 1;
                     left += 1;
                 }
