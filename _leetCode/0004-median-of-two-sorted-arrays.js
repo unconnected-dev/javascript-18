@@ -27,7 +27,7 @@ if(false){
 
 // Not O(log (m+n))
 // O(m + n)
-if(true){
+if(false){
     var findMedianSortedArrays = function(nums1, nums2) {
         const nums3 = [];
         const n1_l = nums1.length, n2_l = nums2.length;
@@ -50,6 +50,34 @@ if(true){
             return (nums3[length / 2] + nums3[length / 2 - 1]) / 2;     // If even, return the average of two middle elements
         }
     };
+}
+
+// Not O(log (m+n))
+// O(m + n)
+if(true){
+    var findMedianSortedArrays = function(nums1, nums2) {
+        const n1_l = nums1.length, n2_l = nums2.length;
+        const length = n1_l + n2_l;
+        const nums3 = new Array(Math.floor(length / 2) + 1);            // Initialize nums3 with the required length
+        const n3_l = nums3.length;
+        let i = 0, n1 = 0, n2 = 0;
+
+        for(i; i < n3_l; i++){
+            if(n2 >= n2_l || (n1 < n1_l && nums1[n1] <= nums2[n2])){
+                nums3[i] = nums1[n1];
+                n1++;
+            } else {
+                nums3[i] = nums2[n2];
+                n2++;
+            }
+        }
+        
+        if (length % 2 !== 0) {
+            return nums3[n3_l -1];
+        } else {
+            return (nums3[n3_l - 1] + nums3[n3_l - 2]) / 2;
+        }
+    }
 }
 
 console.log(`${findMedianSortedArrays(caseNums1_1, caseNums2_1)}`);
