@@ -94,24 +94,28 @@ if(false){
 }
 
 // Goes through node lists adding numbers and carrying tens over to the next node.
-if(true){
+if(false){
     var addTwoNumbers = function(l1, l2) {
-        // Create a new dummy ListNode to serve as the starting point of the result list
+        // Create a new dummy ListNode to serve as the starting point of the 
+        // result list
         const list = new ListNode(0);
         let head = list; 
         let sum = 0;     // To hold the sum of the two digits and any carry
         let carry = 0;   // To hold any carry value greater than 10
     
-        // Iterate as long as there are nodes in either l1 or l2 or there is a carry left to process
+        // Iterate as long as there are nodes in either l1 or l2 or there is a
+        // carry left to process
         while (l1 !== null || l2 !== null || sum > 0) {
     
-            // If l1 is not null, add its value to sum and move to the next node
+            // If l1 is not null, add its value to sum and move to the next
+            // node
             if (l1 !== null) {
                 sum += l1.val;
                 l1 = l1.next;
             }
     
-            // If l2 is not null, add its value to sum and move to the next node
+            // If l2 is not null, add its value to sum and move to the next
+            // node
             if (l2 !== null) {
                 sum += l2.val;
                 l2 = l2.next;
@@ -119,11 +123,12 @@ if(true){
     
             // If the sum is 10 or greater, we have a carry
             if (sum >= 10) {
-                carry = 1;             // Set carry to 1 (indicating we need to carry over)
-                sum -= 10;             // Adjust sum to be the last digit (0-9)
+                carry = 1;          // Set carry to 1
+                sum -= 10;          // Adjust sum to be the last digit (0-9)
             }
     
-            // Create a new ListNode with the current sum (0-9) and attach it to the result list
+            // Create a new ListNode with the current sum (0-9) and attach it
+            // to the result list
             head.next = new ListNode(sum);
             head = head.next;
     
@@ -132,8 +137,43 @@ if(true){
             carry = 0;   // Reset carry for the next digits
         }
     
-        // Return the next node of the dummy list, which is the head of the actual result list
+        // Return the next node of the dummy list, which is the head of the
+        // actual result list
         return list.next;
+    };
+}
+
+// Goes through the two linked lists and adds the numbers togeather.
+// Uses % and Math.floor() to get what numbers need to be put into the node
+// and what value needs to be carried over to the next node.
+if(true){
+    var addTwoNumbers = function(l1, l2){
+        let nxt = new ListNode(0);
+        let head = nxt;
+        let total = 0;
+        let carry = 0;
+
+        while(l1 !== null || l2 !== null || carry > 0){
+            total = carry;
+
+            if (l1 !== null) {
+                total += l1.val;
+                l1 = l1.next;
+            }
+    
+            if (l2 !== null) {
+                total += l2.val;
+                l2 = l2.next;
+            }
+
+            let num = total % 10;
+            carry = Math.floor(total / 10);
+
+            nxt.next = new ListNode(num);
+            nxt = nxt.next;
+        }
+
+        return head.next;
     };
 }
 
