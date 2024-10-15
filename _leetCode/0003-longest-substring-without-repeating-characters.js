@@ -40,7 +40,7 @@ if(false){
 }
 
 // Go through each character then create new substring as needed.
-if(true){
+if(false){
     var lengthOfLongestSubstring = function(s) {
         if(s.length == 0){
             return 0;
@@ -63,6 +63,32 @@ if(true){
         }
 
         return res;
+    };
+}
+
+// Sliding window counter
+// Moves left to right
+// Slower than other solutions
+if(true){
+    var lengthOfLongestSubstring = function(s) {
+        let counter = {};
+        let left = 0, maxLength = 0;
+
+        for(let right = 0; right < s.length; right++){
+            let val = s.charAt(right);
+            counter[val] = (counter[val] || 0) + 1;
+
+            if(counter[val] > 1){
+                while(left < right && counter[val] > 1){
+                    counter[s.charAt(left)] -= 1;
+                    left += 1;
+                }
+            }
+
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+        
+        return maxLength;
     };
 }
 
