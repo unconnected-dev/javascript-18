@@ -36,11 +36,35 @@ if(false){
     }
 }
 
-if(true){
+if(false){
     var reverse = function(x) {
         let res = parseInt(String(Math.abs(x)).split('').reverse().join(''));
         res = x < 0 ? -res : res;
         return res >= -2147483648 && res <= 2147483647 ? res : 0;
+    };
+}
+
+// Optimized solution from LeetCode
+// Previous solutions involved unnecessary operations. This version uses direct
+// string manipulation and adds a '-' to the beginning of the string if the
+// number is negative.
+if(true){
+    var reverse = function(x) {
+        let minus = false;
+        if(x < 0){
+            minus = true;
+            x = -x;
+        }
+
+        let res = String(x).split('').reverse().join('');
+
+        if(minus){
+            res = `-${res}`;
+        }
+
+        res = parseInt(res);
+
+        return (res > 2147483647 || res < -2147483647) ? 0 : res;
     };
 }
 
