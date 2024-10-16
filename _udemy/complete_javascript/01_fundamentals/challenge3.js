@@ -1,3 +1,5 @@
+"use strict";
+
 //Get team average score to decide who won
 console.log("Challenge 3");
 

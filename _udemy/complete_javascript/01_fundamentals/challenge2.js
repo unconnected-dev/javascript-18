@@ -1,3 +1,5 @@
+"use strict";
+
 //Improve on challenge 1
 //BMI comparison 
 console.log("Challenge 2");

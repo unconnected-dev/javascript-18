@@ -1,4 +1,7 @@
+"use strict";
+
 //Tip calculation
+console.log("Challenge 4");
 
 stateTotal(275);
 stateTotal(40);
