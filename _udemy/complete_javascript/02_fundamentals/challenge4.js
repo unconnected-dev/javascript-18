@@ -1,4 +1,5 @@
 "use strict";
+
 //Calculate tip averages
 console.log("Challenge 4");
 

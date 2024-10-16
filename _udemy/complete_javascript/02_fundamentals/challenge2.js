@@ -1,4 +1,5 @@
 "use strict";
+
 //Calculate tip percentages
 console.log("Challenge 2");
 

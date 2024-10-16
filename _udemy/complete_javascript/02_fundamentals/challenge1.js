@@ -1,4 +1,5 @@
 "use strict";
+
 //Compare average scores
 console.log("Challenge 1");
 
