@@ -76,7 +76,7 @@ if(false){
 //In the example below due to rest pattern, numbers becomes an array of the numbers
 //This allows the function to accept individual numbers as well as arrays if they 
 //use the spread operator beforehand
-if(false){
+if(true){
     const add = function(...numbers){
         // console.log(numbers);
         let sum = 0;
