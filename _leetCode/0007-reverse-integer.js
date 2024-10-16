@@ -26,7 +26,7 @@ if(false){
     };  
 }
 
-if(true){
+if(false){
     var reverse = function(x) {
         let newX = x >= 0 
             ? parseInt(String(x).split('').reverse().join(''))
@@ -34,6 +34,14 @@ if(true){
         
         return (newX > 2147483647 || newX < -2147483647) ? 0 : newX;
     }
+}
+
+if(true){
+    var reverse = function(x) {
+        let res = parseInt(String(Math.abs(x)).split('').reverse().join(''));
+        res = x < 0 ? -res : res;
+        return res >= -2147483648 && res <= 2147483647 ? res : 0;
+    };
 }
 
 console.log(`${reverse(caseX_1)}`);
