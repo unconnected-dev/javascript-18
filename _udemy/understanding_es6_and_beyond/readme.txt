@@ -16,8 +16,8 @@ curly braces.
 Lexical environments
 A Lexical Environment is a structure that holds identifier-variable mappings 
 (where the identifier is the variable name). It consists of two components: 
-    - the environment record (which stores the actual variable bindings)
-    - a reference to the outer environment (which allows for lexical scoping)
+    - The environment record (which stores the actual variable bindings)
+    - A reference to the outer environment (which allows for lexical scoping)
 
 A new lexical environment is created with each block. In ES6, variables declared
 with `let` and `const` are block-scoped, meaning they are only accessible 
