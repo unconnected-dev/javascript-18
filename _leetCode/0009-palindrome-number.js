@@ -13,11 +13,30 @@ if(false){
     };
 }
 
-if(true){
+if(false){
     var isPalindrome = function(x) {
         const numString = String(x);
         return numString === numString.split('').reverse().join('');
     };
+}
+
+// Two pointers
+if(true){
+    var isPalindrome = function(x) {
+        const numString = String(x);
+        let left = 0, right = numString.length - 1;
+
+        while (left < right){
+            if(numString[left] !== numString[right]){
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
 }
 
 console.log(`${isPalindrome(caseNum_1)}`);
