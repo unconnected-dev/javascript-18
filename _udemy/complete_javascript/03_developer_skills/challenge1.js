@@ -1,4 +1,5 @@
 "use strict";
+
 //Iterate through the submitted arrays
 console.log("Challenge 1");
 
