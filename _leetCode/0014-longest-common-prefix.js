@@ -22,7 +22,7 @@ if(false){
     };
 }
 
-if(true){
+if(false){
     var longestCommonPrefix = function(strs) {
         if (strs.length === 0) return "";
 
@@ -36,6 +36,27 @@ if(true){
         }
 
         return min_;
+    };
+}
+
+if(true){
+    var longestCommonPrefix = function(strs) {
+        if (strs.length === 0) return "";
+
+        strs.sort();
+
+        const first = strs[0], last = strs[strs.length - 1];
+        
+        let res = ``;
+        for(let i = 0; i < Math.min(first.length, last.length); i++){
+            if(first[i] === last[i]){
+                res += first[i];
+            } else {
+                break;
+            }
+        }
+
+        return res;
     };
 }
 
