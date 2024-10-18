@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Asynchronous
 // Asynchronous means that more than one thing can happen at a time, but this 
 // concept is handled outside the core JavaScript engine. While JavaScript itself

@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // `undefined` in JavaScript
 // `undefined` is a special value in JavaScript that indicates a variable has been
 // declared but has not yet been assigned a value. This is the default value for 
@@ -32,7 +31,7 @@ else {
 // Example:
 if (false) {
     // This would throw a `ReferenceError` because `b` is not declared
-    console.log(`${b}`);
+    console.log(`b: ${b}`);
 }
 
 

@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Single-threaded
 // JavaScript is single-threaded, meaning it can only execute one command at a time.
 // From our perspective, JavaScript behaves as single-threaded, even though the 

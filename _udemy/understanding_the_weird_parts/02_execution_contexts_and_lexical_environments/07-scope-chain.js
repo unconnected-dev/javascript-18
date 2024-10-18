@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Outer Environment
 // Every execution context has a reference to its outer environment. The outer
 // environment is the lexical environment where the function was defined in the
@@ -35,7 +34,7 @@ if (false) {
 
     // `b` will search for `myVar` in its own scope, then in the global scope
     function b() {
-        console.log(myVar);
+        console.log(`myVar: ${myVar}`);
     }
     
     // Calls `b`, which checks for `myVar` in its outer environment (the global scope)
@@ -70,7 +69,7 @@ if (true) {
         b();
         
         function b() {
-            console.log(myVar);
+            console.log(`b(): ${myVar}`);
         }
     }
 

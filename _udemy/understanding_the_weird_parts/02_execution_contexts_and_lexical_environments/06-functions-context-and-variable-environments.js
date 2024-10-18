@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Variable Environment
 // The variable environment refers to the place where variables are stored 
 // in memory. It defines how variables relate to each other within different 
@@ -14,7 +13,7 @@ function b() {
     var myVar;  
 
     // Logs `undefined` because `myVar` is declared but not initialized
-    console.log(`b() ${myVar}`);  
+    console.log(`b(): ${myVar}`);  
 }
 
 function a() {
@@ -27,15 +26,15 @@ function a() {
     b();  
 
     // Logs `2` because this refers to the `myVar` inside function `a`
-    console.log(`a() ${myVar}`);  
+    console.log(`a(): ${myVar}`);  
 }
 
 
 if (true) {
     var myVar = 1;  
-    console.log(`${myVar}`);  
+    console.log(`myVar: ${myVar}`);  
     a();  
-    console.log(`${myVar}`);  
+    console.log(`myVar: ${myVar}`);  
 }
 
 // The log order:

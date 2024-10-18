@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // The Execution Context: Creation and 'Hoisting'
 
 // In most programming languages, the following lines would not work because
@@ -10,17 +9,19 @@
 // and the variable `a` is accessible, although it will have an undefined value
 // (if declared with `var`).
 
-b();                    // This works even though `b` is declared later due to hoisting
-console.log(`a: ${a}`); // `a` exists, but its value is `undefined` due to hoisting
+if(false){
+    b();                    // This works even though `b` is declared later due to hoisting
+    console.log(`a: ${a}`); // `a` exists, but its value is `undefined` due to hoisting
 
-var a = 'Hello World';
+    var a = 'Hello World';
 
-function b() {
-    console.log(`Called b`);
+    function b() {
+        console.log(`Called b`);
+    }
+
+    b();                     // Invokes the function again after it's declared
+    console.log(`a: ${a}`);  // Now logs 'Hello World' since `a` has been initialized
 }
-
-b();                     // Invokes the function again after it's declared
-console.log(`a: ${a}`);  // Now logs 'Hello World' since `a` has been initialized
 
 
 
@@ -82,10 +83,10 @@ if (false) {
 // Example of variable hoisting with `var`:
 if (false) {
     // Logs `undefined` because `d` is hoisted but not yet assigned
-    console.log(`${d}`);        
+    console.log(`d: ${d}`);        
     var d = 'assigning a value';
     // Logs 'assigning a value' because `d` has now been initialized
-    console.log(`${d}`);        
+    console.log(`d: ${d}`);        
 }
 
 

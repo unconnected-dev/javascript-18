@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Syntax parser
 // A program that reads your code, interprets it, and checks if the grammar is 
 // valid. It converts your code into a format that the computer can execute 
