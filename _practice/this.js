@@ -16,7 +16,8 @@ if(false){
     console.log(this.name)
 }
 
-if(true){
+
+if(false){
     let myObject = {
         name: 'bob',
         
@@ -59,4 +60,31 @@ if(true){
     myObject.cantCallMe();
     myObject.canCallMe();
     myObject.canAlsoCallMe();
+}
+
+
+if(false){
+    let myObject = {
+        testname: "test",
+        self: this,
+
+        callme: function(){
+            console.log(this);
+
+            function subcall(self){
+                console.log(`subcall: ${this}`);
+                console.log(`subcall: ${self}`);
+            }
+
+            let othercall = function(self){
+                console.log(`othercall: ${this}`);
+                console.log(`othercall: ${self}`);
+            }
+
+            subcall(this);
+            othercall(this);
+        }
+    }
+
+    myObject.callme();
 }
