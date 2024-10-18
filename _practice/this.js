@@ -1,5 +1,7 @@
 'use strict';
 
+//General `this` Practice
+
 if(false){
     // `this` is the global object
     // but in strict mode, `undefined`
@@ -41,10 +43,20 @@ if(true){
             }
             setName('Tom');
             this.callMe();
+        },
+
+        // can use arrow functions as they have `this` of the surrounding context
+        canAlsoCallMe: function(){
+            const setName = (newName) => {
+                this.name = newName;
+            }
+            setName('John');
+            this.callMe();
         }
     }
 
     myObject.callMe();
     myObject.cantCallMe();
     myObject.canCallMe();
+    myObject.canAlsoCallMe();
 }
