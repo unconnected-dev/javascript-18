@@ -70,7 +70,7 @@ if(false){
 }
 
 // Simple filters
-if(true){
+if(false){
     function isEven(n){
         return n%2 === 0;
     }
@@ -95,4 +95,36 @@ if(true){
     const numberArr = [1,2,3,4,5,6,7,8,9,10]
     console.log(`${filterArr(isEven, numberArr)}`);
     console.log(`${filterArr(isPrime, numberArr)}`);
+}
+
+// Mapping
+if(false){{
+    const users = [
+        { name: "Alice", email: "alice@example.com" },
+        { name: "Bob", email: "bob@example.com" },
+        { name: "Charlie", email: "charlie@example.com" }
+    ];
+    
+    const emails = users.map(user => user.email);
+    console.log(`emails: ${emails}`);
+    
+    const names = users.map(user => user.name);
+    console.log(`names: ${names}`);
+}}
+
+
+// Pipeline
+if(true){
+    const trim = (str) => str.trim();
+    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    const removeSpecialChars = (str) => str.replace(/[^a-zA-Z0-9 ]/g, '');
+    
+    function applyTransformations(transformations, data) {
+        return transformations.reduce((result, transformation) => transformation(result), data);
+    }
+    
+    const name = "   john@doe!   ";
+    const cleanedName = applyTransformations([trim, removeSpecialChars, capitalize], name);
+    
+    console.log(cleanedName); 
 }
