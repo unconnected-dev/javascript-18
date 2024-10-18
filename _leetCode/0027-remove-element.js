@@ -7,7 +7,8 @@ const caseVal_1 = 3;
 const caseNums_2 = [0,1,2,2,3,0,4,2];
 const caseVal_2 = 2;
 
-if(true){
+// Removes by splicing out the element
+if(false){
     var removeElement = function(nums, val) {
         let i = 0;
 
@@ -20,6 +21,17 @@ if(true){
         }
 
         return nums;
+    };
+}
+
+if(true){
+    var removeElement = function(nums, val) {
+
+        while(nums.includes(val)){
+            nums.splice(nums.indexOf(val), 1);
+        }
+
+        return nums.length;
     };
 }
 
