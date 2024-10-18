@@ -40,7 +40,7 @@ if(false){
 // Question requires in-place not a new array
 // Return the number of elements in nums not equal to val
 // Tracks elements equal to val via i and replaces with n
-if(true){
+if(false){
     var removeElement = function(nums, val){
         let i = 0;
         for(n of nums){
@@ -49,8 +49,25 @@ if(true){
                 i++;
             }
         }
-
+        
         return i;
+    };
+}
+
+if(true){
+    var removeElement = function(nums, val){
+        let left = 0, right = nums.length - 1;
+
+        while(left <= right){
+            if(nums[left] === val){
+                [nums[left], nums[right]] = [nums[right], nums[left]];
+                right--; 
+            } else {
+                left++;
+            }
+        }
+
+        return left;
     };
 }
 
