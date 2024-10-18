@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // When a function is invoked, a new execution context is created
 // Each execution context consists of:
 //  - A variable environment 

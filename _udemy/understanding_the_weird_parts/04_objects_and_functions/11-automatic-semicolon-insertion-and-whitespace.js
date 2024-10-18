@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Syntax Parsers
 // A syntax parser reads your code, checks its validity, and interprets what 
 // you're trying to achieve. As it processes your code character by character, 

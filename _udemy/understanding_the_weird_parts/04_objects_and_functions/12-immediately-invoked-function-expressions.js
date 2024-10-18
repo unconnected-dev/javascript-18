@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Function Statements vs Function Expressions
 
 // Function Statement

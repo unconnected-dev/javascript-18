@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Namespace
 // A namespace is a container for variables and functions, typically used to 
 // avoid naming collisions by keeping variables and functions with the same 

@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // JavaScript Object Notation (JSON)
 // JSON is inspired by JavaScript's object literal syntax but is used for 
 // data interchange between systems.

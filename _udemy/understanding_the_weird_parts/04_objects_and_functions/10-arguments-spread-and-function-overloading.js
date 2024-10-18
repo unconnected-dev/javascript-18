@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // When a function is invoked, a new execution context is created. Each 
 // execution context has a variable environment, a reference to the outer 
 // environment, the `this` keyword, and an `arguments` object

@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Dot Operator (.)
 // The dot operator (.) is used to access object properties directly by name,
 // like person.name. It’s simple and readable but only works with valid 

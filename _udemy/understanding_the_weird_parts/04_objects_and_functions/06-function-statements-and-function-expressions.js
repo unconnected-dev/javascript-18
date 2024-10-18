@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Expression:
 // An expression is a unit of code that produces a value. It can be a part of
 // a larger statement and doesn't necessarily need to be assigned to a variable.
@@ -49,8 +48,8 @@ function greet(){
 // it to a variable. The function has no name (anonymous), but can be 
 // referenced via the variable `anonymousGreet`.
 
- // You cannot call a function expression before it's defined, as only the 
- // variable is hoisted, not the function itself
+// You cannot call a function expression before it's defined, as only the 
+// variable is hoisted, not the function itself
 var anonymousGreet = function(){
     console.log(`Hi`);
 }

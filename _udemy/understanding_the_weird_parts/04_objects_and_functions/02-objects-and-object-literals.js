@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Object Literal {}
 // This is not an operator. When JavaScript encounters curly braces without a 
 // function, if, or while statement, it assumes you're creating an object. It

@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // An array is a collection that can hold multiple values, even of different 
 // types
 var arr = [1, 2, 3];
