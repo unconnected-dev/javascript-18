@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Dynamic Typing
 // In JavaScript, variables are dynamically typed, meaning you don't explicitly
 // declare the type of data a variable holds. The JavaScript engine determines 

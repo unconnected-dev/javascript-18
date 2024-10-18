@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Operator
 // An operator in JavaScript is a special function, but it is written using a 
 // different syntax. Operators typically take two operands (parameters) and 

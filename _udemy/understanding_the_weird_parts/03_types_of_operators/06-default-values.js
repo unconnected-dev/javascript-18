@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Function Parameter Handling in JavaScript
 
 function greet(name){

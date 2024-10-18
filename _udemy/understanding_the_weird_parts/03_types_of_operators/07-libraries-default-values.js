@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Overwriting Variables Across Multiple JavaScript Files
 
 // In an HTML file, when multiple JavaScript files are included, they are executed

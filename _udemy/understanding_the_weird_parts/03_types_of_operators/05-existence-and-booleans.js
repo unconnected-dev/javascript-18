@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Boolean Coercion in JavaScript
 
 // JavaScript coerces values to boolean in various contexts, such as in 
