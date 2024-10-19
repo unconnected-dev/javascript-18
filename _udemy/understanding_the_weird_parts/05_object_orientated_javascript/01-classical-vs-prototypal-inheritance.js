@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Classical vs. Prototypal Inheritance
 
 // Inheritance:

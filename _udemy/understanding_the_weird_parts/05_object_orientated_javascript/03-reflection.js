@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Reflection in JavaScript
 // Reflection allows an object to inspect itself, listing and even changing
 // its properties and methods.

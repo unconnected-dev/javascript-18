@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 //Prototype
 // All objects in JavaScript have a `prototype` property. This property is a
 // reference to another object, often called `__proto__`.
