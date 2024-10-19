@@ -1,44 +1,53 @@
-'use strict';
+"use strict";
 
-//functions accepting callback functions
 
-const oneWord = function(str){
+// Functions Accepting Callback Functions
+
+// This function removes spaces from a string and converts it to lowercase.
+const oneWord = function(str) {
     return str.replace(/ /g, '').toLowerCase();
 }
 
-const upperFirstWord = function(str){
+// This function capitalizes the first word of a string and returns it
+// alongside the rest of the words unchanged.
+const upperFirstWord = function(str) {
     const [first, ...others] = str.split(' ');
     return [first.toUpperCase(), ...others].join(' ');
 }
 
-//higher order function
-const transformer = function(str, fn){
-    console.log(`${fn.name}`);
-    return fn(str);
+
+// Higher-Order Function
+// This function takes a string and a callback function (fn), logs the name of
+// the callback, and executes it with the string.
+const transformer = function(str, fn) {
+    console.log(`${fn.name}`);                      // Log the name of the callback function
+    return fn(str);                                 // Call the provided function with the string
 }
 
+// Example usage of the transformer function
 const a = 'This is a sentence';
-console.log(`${transformer(a, oneWord)}`);
-console.log(`${transformer(a, upperFirstWord)}`);
+console.log(`${transformer(a, oneWord)}`);          // Output: thisisasentence
+console.log(`${transformer(a, upperFirstWord)}`);   // Output: This is a sentence
 
-
-//JavaScript uses callbacks all the time
-const high5 = function(){
+// JavaScript uses callbacks frequently
+// Example of a simple callback function
+const high5 = function() {
     console.log(`High five...`);
 }
+
+// Add a click event listener to the document body
+// The addEventListener method is a higher-order function that takes high5 as a
+// callback function to execute on click.
 document.body.addEventListener('click', high5);
-//addEventListener is the higher order function
-//high5 is the callback function
+
+// Example of using high5 as a callback with forEach
+['Jonas', 'Martha', 'Adam'].forEach(high5);         // Calls high5 for each name
 
 
-['Jonas', 'Martha', 'Adam'].forEach(high5);
 
-
-//why callbacks?
-//it makes it easier to split code up
-//callback functions allow for abstractions
-
-//meaning we can hide some detail
-//for example the transformer function does not care about
-//hw the string is transformed, all it wants to do is transofmr
-// a string
+// Why Use Callbacks?
+// Callbacks make it easier to split code into smaller, manageable parts. They
+// allow for abstractions, meaning we can hide implementation details.
+// For example, the transformer function does not concern itself with how the
+// string is transformed; it simply requires a function that performs the
+// transformation.

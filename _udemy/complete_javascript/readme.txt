@@ -67,3 +67,30 @@ It's created by the lexical nesting of blocks and functions. When a variable
 isn't found in the current scope, JavaScript looks up the scope chain. This
 is known as "variable lookup" and stops when the variable is found or no
 more scopes exist.
+
+
+First-Class Functions
+In JavaScript, functions are treated as first-class citizens. This means
+that functions can be assigned to variables, passed as arguments to other
+functions, and returned from functions. Essentially, functions are just
+another type of object.
+
+Not all programming languages support first-class functions. For instance,
+in C, functions cannot be treated as first-class citizens because they
+cannot be passed around like variables. Similarly, Java only introduced
+first-class functions with lambda expressions in Java 8. First-class
+functions are a key feature of functional programming languages such as
+JavaScript, Python, and Ruby.
+
+
+Higher-Order Functions
+A higher-order function is defined as a function that:
+    - Accepts another function as an argument,
+    - Returns a new function, or
+    - Does both.
+This concept is only made possible due to the first-class nature of functions.
+
+It's important to note that the concept of first-class functions is a
+feature of a programming language. It indicates that all functions can be
+treated as values. This is more of a theoretical concept, while higher-order
+functions are a practical application of that concept.
