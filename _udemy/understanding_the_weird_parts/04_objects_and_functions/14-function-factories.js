@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Function Factories
 // A function factory is a function that creates and returns other functions.
 // The returned function often relies on the variables from the outer 

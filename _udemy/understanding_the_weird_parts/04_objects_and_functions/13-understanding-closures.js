@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Closures in JavaScript
 // A closure is created when a function returns another function that 
 // "remembers" the variables from its outer (parent) scope, even after the 
@@ -20,6 +19,9 @@ greet(`Hi`)(`Tony`);
 // A variable can store the returned function (closure) for later invocation
 var a = greet(`Hello`);
 a(`Bob`);
+
+// Not all closures are IIFEs. They are related concepts in JavaScript, but
+// they serve different purposes and are not synonymous.
 
 
 // How does the inner function know the value of `whattosay`?

@@ -282,6 +282,9 @@ A closure is created when a function returns another function that "remembers"
 the variables from its outer (parent) scope, even after the outer function has
 finished executing
 
+Not all closures are IIFEs. They are related concepts in JavaScript, but
+they serve different purposes and are not synonymous.
+
 
 Function Factories
 A function factory is a function that creates and returns other functions. The

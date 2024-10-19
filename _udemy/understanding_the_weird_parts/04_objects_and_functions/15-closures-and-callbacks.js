@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // Closures and Callbacks
 
 // A closure is a function that retains access to its lexical scope, even

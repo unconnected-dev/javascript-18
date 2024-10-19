@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 // JavaScript Functions: Special Methods for Controlling `this`
 
 // In JavaScript, functions have access to several special methods:
