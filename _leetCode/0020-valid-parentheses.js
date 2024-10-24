@@ -37,7 +37,7 @@ if(false){
     };
 }
 
-if(true){
+if(false){
     var isValid = function(s) {
         const myClosedDict = {
             "}": "{",
@@ -60,6 +60,34 @@ if(true){
         }
         
         return res === "";
+    };
+}
+
+
+if(true){
+    var isValid = function(s) {
+
+        const myClosedDict = {
+            "}": "{",
+            "]": "[",
+            ")": "("
+        };
+
+        const myOpenSet = new Set(["{", "(", "["]);
+
+        let res = [];
+        for (let c of s) {
+            
+            if (myOpenSet.has(c)) {
+                res.push(c);
+            } else if (res.length >= 1 && res[res.length - 1] === myClosedDict[c]) {
+                res.pop();
+            } else if (c in myClosedDict) {
+                return false;
+            }
+        }
+
+        return res.length === 0;
     };
 }
 
