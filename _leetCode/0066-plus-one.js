@@ -6,7 +6,7 @@ const caseDigits_2 = [4,3,2,1];
 const caseDigits_3 = [9];
 const caseDigits_4 = [9,9];
 
-if(true){
+if(false){
     var plusOne = function(digits) {
         let rrDigits = digits.slice().reverse();
         let carry = false;
@@ -27,6 +27,24 @@ if(true){
         }
 
         return rrDigits.reverse();
+    };
+}
+
+if(true){
+    var plusOne = function(digits) {
+
+        const digitsLength = digits.length;
+
+        for (let i = digitsLength - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i] += 1;
+                return digits;
+            } else {
+                digits[i] = 0;
+            }
+        }
+
+        return [1].concat(digits); 
     };
 }
 
