@@ -30,7 +30,7 @@ if(false){
     };
 }
 
-if(true){
+if(false){
     var plusOne = function(digits) {
 
         const digitsLength = digits.length;
@@ -45,6 +45,35 @@ if(true){
         }
 
         return [1].concat(digits); 
+    };
+}
+
+
+if(true){
+    var plusOne = function(digits) {
+
+        let reverseDigits = digits.slice().reverse();
+        const digitsLength = digits.length;
+        let carryOne = false;
+        let i = 0;
+    
+        while (i < digitsLength) {
+            if (reverseDigits[i] < 9) {
+                reverseDigits[i] += 1;
+                carryOne = false;
+                break;
+            } else {
+                reverseDigits[i] = 0;
+                carryOne = true;
+            }
+            i += 1;
+        }
+    
+        if (carryOne === true) {
+            reverseDigits.push(1);
+        }
+    
+        return reverseDigits.reverse();
     };
 }
 
