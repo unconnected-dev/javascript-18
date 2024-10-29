@@ -58,3 +58,27 @@ if(false){
         console.log(`${digits.indexOf(i)}... ${digits.slice(i)[0]}`);
     }
 }
+
+if(false){
+    const str = "abcdefghijklm";
+    
+    str.split('').forEach(c => {
+        console.log(`${c}`);
+    });
+}
+
+if(false){
+    const str = "abcdefghijklm";
+    const arr = str.split('');
+
+    let left = 0, right = arr.length;
+
+    while(left <= right){
+        // Need to use destructuring
+        [arr[left], arr[right]] = [arr[right], arr[left]];
+        left++;
+        right--;
+    }
+
+    console.log(`${arr}`);
+}
