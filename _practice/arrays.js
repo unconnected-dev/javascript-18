@@ -12,6 +12,14 @@ function generateBigNumberArray(){
 }
 
 if(true){
+    // destructuring arrays
+    const names = [`tom`, `bob`, `jim`];
+    const [tom, bob, jim] = names;
+
+    console.log(`${tom}, ${bob}, ${jim}`);
+}
+
+if(false){
 
     // default values
     function test(a=1,b=2,c=3){
