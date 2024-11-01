@@ -11,7 +11,14 @@ function generateBigNumberArray(){
     return arr;
 }
 
-if(true){
+if(false){
+    const an_array = [`bob`, `tom`, `jim`];
+    an_array.forEach((name) => {
+        console.log(`${name}`);
+    });
+}
+
+if(false){
     // destructuring arrays
     const names = [`tom`, `bob`, `jim`];
     const [tom, bob, jim] = names;
