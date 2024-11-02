@@ -11,6 +11,27 @@ function generateBigNumberArray(){
     return arr;
 }
 
+if(true){
+    const a = [1,3,5,7,9];
+    const b = [2,4,6,8,10];
+
+    const res = [];
+
+    let c = 0, d = 0;
+
+    while(c < a.length || d < b.length){
+
+        if(c < a.length && a[c] < b[d]){
+            res.push(a[c]);
+            c++;
+        } else if(d < b.length){
+            res.push(b[d]);
+            d++;
+        }
+    }
+    console.log(`${res}`);
+}
+
 if(false){
     const an_array = [`bob`, `tom`, `jim`];
     an_array.forEach((name) => {
