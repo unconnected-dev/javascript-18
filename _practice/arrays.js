@@ -12,6 +12,39 @@ function generateBigNumberArray(){
 }
 
 if(true){
+    // Spread operator to combine arrays
+    const a = [1,2,3,4];
+    const b = [5,6,7,8];
+    const c = [...a, ...b];
+
+    console.log(`c: ${c}`);
+}
+
+if(false){
+    const names = [`bob`, `tim`, `pam`, `len`];
+
+    // rest syntax
+    function test(a, b, ...c){
+        console.log(`a: ${a}`);
+        console.log(`b: ${b}`);
+        console.log(`c: ${c}`);
+    }
+
+    test(...names);
+}
+
+if(false){
+    // Spread operator creates a new array
+    // not a reference to the old array
+    const aArr = [1,2,3,4,5];
+    const bArr = [...aArr];
+
+    aArr[0] = 0;
+    console.log(`aArr: ${aArr}`);
+    console.log(`bArr: ${bArr}`);
+}
+
+if(false){
     // Spreading an array
     const items = [`apple`, `pear`, `pineapple`];
 
