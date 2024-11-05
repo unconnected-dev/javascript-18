@@ -12,6 +12,14 @@ function generateBigNumberArray(){
 }
 
 if(true){
+    // Destructure
+    const anArray = [1,2,3,4,5,6];
+    const [a,b,c, ...d] = anArray
+    console.log(`${a}, ${b}, ${c}`);
+    console.log(`${d}`);
+}
+
+if(false){
     // Spread operator to combine arrays
     const a = [1,2,3,4];
     const b = [5,6,7,8];
