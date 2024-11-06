@@ -53,36 +53,6 @@ let bigMap = new Map([
 
 
 
-// let itemArray = [`other1`,`other2`,`other3`];
-// joinedUp(`a`, ...itemArray ,`b`);
-// //Rest pattern
-// function joinedUp(...theRest){
-//     for(let item of theRest){
-//         console.log(item);
-//     }
-// }
-
-
-
-//Spreading an array
-// let itemArray = [`item1`, `item2`, `item3`];
-// spreadMe(...itemArray);
-// function spreadMe(a, b, c){
-//     console.log(a);
-//     console.log(b);
-//     console.log(c);
-// }
-
-
-//Spread operator creates a new array, not a reference to the old array
-// let oldArray = [1,2,3];
-// let newArray = [...oldArray];
-// oldArray[0]=4;
-// console.log(oldArray);
-// console.log(newArray);
-
-
-
 // let {nest1:{attribute1: a, attribute2: b}, nest2}=bigObject.nestedObject;
 // console.log(`${a} , ${b}`);
 
@@ -124,12 +94,6 @@ let bigMap = new Map([
 //     return [`first`, `second`];
 // }
 
-
-//Nested destructuring
-// let anArray = [1,2,3,4,5,[6,7,[8,9]],[10]]
-
-// let [,,,,five,[six,seven],[ten]] = anArray;
-// console.log(ten);
 
 
 
@@ -182,26 +146,7 @@ let bigMap = new Map([
 
 // console.log({...bigObject.nestedObject});
 
-//destructure
-// const anArray = [1,2,3,4,5,6];
-// const [a,b,c, ...d] = anArray
-// console.log(a,b,c);
-// console.log(d);
 
-//rest pattern compiles individual numbers into an array
-//spread breaks an array up
-// let spreadMe = [1,2,3,4,5,6,7,8,9];
-
-// let [a, b, ...restMe] = spreadMe;
-// console.log(a, b);
-// console.log(restMe);
-
-//spread pattern here
-// spreadFunction(1,2,3, ...spreadMe);
-//rest pattern here
-// function spreadFunction(...args){
-//     console.log(args);
-// }
 
 
 //you can add optional chaining to a functions () and use ??
@@ -283,38 +228,6 @@ let bigMap = new Map([
 // let { prop1: newVarName } = bigObject;
 // console.log(newVarName);
 
-
-//Destructuring
-// console.log(recursionAgain(1, [...bigArray, ...optionalNestedArray]));
-
-// function recursionAgain(depth, ...args){
-//     let returnArray = [];
-
-//     for(let element of args){
-//         if(typeof element === 'number')
-//             returnArray.push(element)
-//         else{
-//             let subReturn = recursionAgain(depth+1, ...element);
-//             for(let val of subReturn)
-//                 returnArray.push(val);
-//         }
-//     }
-
-//     return returnArray;
-// }
-
-
-// let [a,,c] = returnArray()
-// console.log(a, c);
-
-
-// let [first, , third, ...fourth] = bigArray;
-// console.log(first, third, fourth);
-
-
-// let [a, b, ...c] = bigArray;
-// console.log(a,b);
-// console.log(c);
 
 
 //Short circuiting

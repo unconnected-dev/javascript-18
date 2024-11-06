@@ -11,7 +11,33 @@ function generateBigNumberArray(){
     return arr;
 }
 
-if(true){
+if(false){
+    function f(...args){
+        let total = 0;
+        for(const arg of args){
+            total += arg;
+        }
+
+        console.log(`${total}`);
+    }
+
+    const [a, b, c = 1, d = 1] = [2, 3];
+    f(a,b,c,d);
+}
+
+if(false){
+    function joinUp(...items){
+        for(const item of items){
+            console.log(`${item}`);
+        }
+    }
+
+    const items = [`a`,`b`,`c`];
+    // Rest
+    joinUp(...items, `d`,`e`);
+}
+
+if(false){
     // Destructure
     const anArray = [1,2,3,4,5,6];
     const [a,b,c, ...d] = anArray
