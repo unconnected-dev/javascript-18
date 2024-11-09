@@ -14,6 +14,15 @@ const bigObject = {
 }
 
 if(true){
+    function passObject(obj){
+        for(const prop in obj){
+            console.log(`${prop}`);
+        }
+    }
+    passObject(bigObject);
+}
+
+if(false){
     const { prop1: property1, prop2: property2, ...properties } = bigObject;
 
     console.log(`${property1}`);
