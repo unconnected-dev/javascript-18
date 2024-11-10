@@ -14,6 +14,13 @@ const bigObject = {
 }
 
 if(true){
+    const vals = Object.values(bigObject);
+    for(let val of vals){
+        console.log(`${val}`);
+    }
+}
+
+if(false){
     function passObject(obj){
         for(const prop in obj){
             console.log(`${prop}`);
