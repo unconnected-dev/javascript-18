@@ -13,7 +13,23 @@ const bigObject = {
     }
 }
 
-if(true){
+if(false){
+    // Entries can get the key: value of the object
+    const vals = Object.entries(bigObject);
+    for(let [k, v] of vals){
+        console.log(`key: ${k}, val: ${v}`);
+    }
+}
+
+if(false){
+    const keys = Object.keys(bigObject);
+    for(let key of keys){
+        console.log(`key: ${key}`);
+        console.log(`${bigObject[key]}`);
+    }
+}
+
+if(false){
     const vals = Object.values(bigObject);
     for(let val of vals){
         console.log(`${val}`);

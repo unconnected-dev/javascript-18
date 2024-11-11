@@ -189,15 +189,6 @@ let bigMap = new Map([
 //     console.log(prop);
 // }
 
-// let vals = Object.values(bigObject);
-// for(let val of vals){
-//     console.log(val);
-// }
-
-// let entries = Object.entries(bigObject);
-// for(let [key, val] of entries){
-//     console.log(`key: ${key} , val: ${val}`);
-// }
 
 
 //Check logical assignment operator
