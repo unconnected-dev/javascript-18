@@ -183,13 +183,6 @@ let bigMap = new Map([
 // console.log(  bigMap.get(aStatement)  );
 
 
-//Go through an objects properties
-// let props = Object.keys(bigObject);
-// for(let prop of props){
-//     console.log(prop);
-// }
-
-
 
 //Check logical assignment operator
 // let ownerName = `John`;
