@@ -52,62 +52,10 @@ let bigMap = new Map([
 
 
 
-
-// let {nest1:{attribute1: a, attribute2: b}, nest2}=bigObject.nestedObject;
-// console.log(`${a} , ${b}`);
-
-
-//Passing a function an object
-// let anObjectForAFunction = {
-//     firstName: `pAul`,
-//     lastName: `bennett`,
-//     age: 37
-// }
-// passMeAnObject(anObjectForAFunction);
-// function passMeAnObject(o){
-//     let {firstName, lastName, age} = o;
-//     firstName = firstName.toLowerCase();
-//     firstName = firstName[0].toUpperCase() + firstName.slice(1);
-// }
-
-
-//Destructuring an object
-//switching variable names
-// const {prop1: property1, prop2: property2} = bigObject;
-// console.log(property1, property2); 
-
 //setting an array as a default
 // const {stringArray:optionArray = []} = bigObject;
 // console.log(optionArray);
 
-
-//Basic destructuring
-// let aString = `all lower case string`;
-// const [firstword, secondWord, ...remainingWords] = aString.split(` `);
-// console.log(`${firstword} ${secondWord}`);
-// console.log(remainingWords);
-
-
-// const [firstword, secondWord] = returnTwoStringsInArray();
-// console.log(`${firstword} + ${secondWord}`);
-// function returnTwoStringsInArray(){
-//     return [`first`, `second`];
-// }
-
-
-
-
-// let properties = Object.keys(bigObject);
-// console.log(properties);
-
-// for(let i = 0; i < properties.length; i++){
-//     console.log(bigObject[`${properties[i]}`]);
-// }
-
-
-// for(let [prop, val] of Object.entries(bigObject)){
-//     console.log(`key: ${prop}, val: ${val}`);
-// }
 
 
 //short circuit || will return the first truthy
@@ -199,18 +147,6 @@ let bigMap = new Map([
 // for(let [key, val] of bigObject.stringArray.entries()){
 //     console.log(`${key} : ${val}`)
 // }
-
-
-//Destructuring nested objects
-// let { nestedObject: { nest1: {attribute1: altName1, attribute2: altName2}, nest2: altName3 }} = bigObject;
-// console.log(altName1);
-// console.log(altName2);
-// console.log(altName3);
-
-
-//Basic destructuring for object
-// let { prop1: newVarName } = bigObject;
-// console.log(newVarName);
 
 
 

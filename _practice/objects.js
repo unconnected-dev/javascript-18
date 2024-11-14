@@ -10,7 +10,36 @@ const bigObject = {
 
     f: function(){
         console.log(`bigObject function called`);
+    },
+
+    nestedObject: {
+        nested1: {
+            attr: `attribute`
+        },
+        nested2: {
+            attr: `attribute`
+        }
     }
+}
+
+if(false){
+    // Destructuring nested object within an object
+    let { nested1: a, nested2: b } = bigObject.nestedObject;
+    console.log(`a: ${a.attr}`);
+    console.log(`b: ${b.attr}`);
+}
+
+if(false){
+    // Passing object into function
+    function passInObject(obj){
+        // Destructuring object with variable name switch
+        let { prop1: str } = obj;
+        str = str.toLowerCase();
+        str = str[0].toUpperCase() + str.slice(1);
+        console.log(`str: ${str}`);
+    }
+
+    passInObject(bigObject);
 }
 
 if(false){
