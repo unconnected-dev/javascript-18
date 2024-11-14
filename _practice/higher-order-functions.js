@@ -1,6 +1,25 @@
 // Higher Order Functions
 // Functions that take functions or return functions or both
 
+if(true){
+    function callMe(n){
+        console.log(`Call me ${n}`);
+    }
+
+    function iAm(n){
+        console.log(`I am ${n}`);
+    }
+
+    function caller(fn, name){
+        return fn(name);
+    }
+
+    let name = `Ishmael`;
+    caller(callMe, name);
+    name = `Iron Man`;
+    caller(iAm, name);
+}
+
 // Simple math operations
 if(false){
     function add(a, b){
@@ -114,7 +133,7 @@ if(false){{
 
 
 // Pipeline
-if(true){
+if(false){
     const trim = (str) => str.trim();
     const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     const removeSpecialChars = (str) => str.replace(/[^a-zA-Z0-9 ]/g, '');
