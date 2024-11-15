@@ -19,7 +19,18 @@ const bigObject = {
         nested2: {
             attr: `attribute`
         }
-    }
+    },
+
+    arr: [`a`,`b`,`c`,`d`]
+}
+
+
+if(false){
+    // Destructuring nested array within an object
+    let [c = `x`, d = `z`, ...e ] = bigObject.arr; 
+    console.log(`c: ${c}`);
+    console.log(`d: ${d}`);
+    console.log(`e: ${e}`);
 }
 
 if(false){

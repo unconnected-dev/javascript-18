@@ -72,28 +72,11 @@ let bigMap = new Map([
 // let a = bigObject.prop6 ?? false;
 // console.log(a);
 
-//rename from destructuring an object nested
-// const {nestedObject: {nest1:{attribute1:at1, attribute2: at2}}} = bigObject;
-// console.log(at1); 
-// console.log(at2);
-
-
-//rename destructure from object
-// const {prop1: a, prop2: b} = bigObject;
-// console.log(a);
-// console.log(b);
 
 
 // const aNestedArray = [1,2,[3,4]];
 // const [,,[three]] = aNestedArray;
 // console.log(three); 
-
-
-// const [a, ...b] = bigObject.stringArray;
-// console.log(b);
-
-// console.log({...bigObject.nestedObject});
-
 
 
 
@@ -227,10 +210,6 @@ let bigMap = new Map([
 // }
 
 
-//Destructure
-// let [a, b, ...c] = bigArray;
-// console.log(`${a}, ${b}`);
-// console.log(`${c}`);
 
 // processArray(bigArray);
 // function processArray(anArray){
@@ -245,8 +224,6 @@ let bigMap = new Map([
 // let [a, b, [c, d], [e, f]] = optionalNestedArray;
 // process(a,b,c,d,e,f);
 
-// let [a, b, c = 1, d = 1] = [2, 3];
-// process(a,b,c,d);
 
 // function process(...args){
 //     let total = 0;
@@ -281,10 +258,6 @@ let bigMap = new Map([
 // console.log(someStrings);
 // console.log(otherStrings);
 
-
-
-// let {stringArray: a, otherStringArray: b, ...c} = bigObject;
-// console.log(a, b, c);
 
 //Default if variable doesn't exist
 // let { prop1: a = '', prop2:b=0, prop6:c = 10} = bigObject;
