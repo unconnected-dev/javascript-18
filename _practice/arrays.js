@@ -11,6 +11,12 @@ function generateBigNumberArray(){
     return arr;
 }
 
+if(true){
+    const nested = [`a`,`b`,`c`,[`d`,`e`]];
+    const [,,,[...arr]] = nested;
+    console.log(`nested arrray: ${arr}`);    
+}
+
 if(false){
     function f(...args){
         let total = 0;

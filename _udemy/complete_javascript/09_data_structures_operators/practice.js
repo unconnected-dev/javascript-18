@@ -73,13 +73,6 @@ let bigMap = new Map([
 // console.log(a);
 
 
-
-// const aNestedArray = [1,2,[3,4]];
-// const [,,[three]] = aNestedArray;
-// console.log(three); 
-
-
-
 //you can add optional chaining to a functions () and use ??
 // console.log(bigObject?.functionProp2?.() ?? `unavailable`); 
 
