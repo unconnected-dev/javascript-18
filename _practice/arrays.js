@@ -12,6 +12,19 @@ function generateBigNumberArray(){
 }
 
 if(true){
+    // Rest pattern
+    const arr = [`a`,`b`,`c`,`d`,`e`];
+
+    function breakArr(...arr){
+        for(let i = 0; i < arr.length; i++){
+            console.log(`i: ${i} - ${arr[i]}`);
+        }
+    }
+    
+    breakArr(...arr,`f`,`g`);
+}
+
+if(false){
     const nested = [`a`,`b`,`c`,[`d`,`e`]];
     const [,,,[...arr]] = nested;
     console.log(`nested arrray: ${arr}`);    

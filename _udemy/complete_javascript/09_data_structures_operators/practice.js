@@ -196,14 +196,6 @@ let bigMap = new Map([
 // }
 
 
-//Rest pattern
-// function breakArray(...anArray){
-//     for(let i = 0; i < anArray.length; i++)
-//         console.log(`Breaking: ${anArray[i]}`);
-// }
-
-
-
 // processArray(bigArray);
 // function processArray(anArray){
 //     let [a, b, ...c] = anArray;
