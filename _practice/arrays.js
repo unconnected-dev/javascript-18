@@ -12,7 +12,17 @@ function generateBigNumberArray(){
 }
 
 if(true){
-    // Rest pattern
+    const a = [1,2,3,4];
+    const b = [5,6,7,8];
+
+    function process(...args){
+        console.log(`args: ${args}`);
+    }
+    process(...a,...b,9,10);
+}
+
+if(false){
+    // Rest pattern and spread operator
     const arr = [`a`,`b`,`c`,`d`,`e`];
 
     function breakArr(...arr){

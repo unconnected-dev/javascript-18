@@ -219,17 +219,6 @@ let bigMap = new Map([
 // }
 
 
-//Using spread to seperate the string array elements and combine
-// let combinedArray = [...bigObject.stringArray, ...bigObject.otherStringArray];
-// console.log(combinedArray);
-
-//Use spread again so can add more elements to the function 
-// process(0, ...combinedArray, 1, 2);
-// function process(...args){
-//     console.log(args);
-// }
-
-
 //Use : to use a different variable name
 //Don't forget objects don't need order
 // let {prop1: a, prop3: b, ...c} = bigObject;
