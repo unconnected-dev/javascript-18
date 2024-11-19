@@ -58,14 +58,6 @@ let bigMap = new Map([
 
 
 
-//short circuit || will return the first truthy
-// console.log(undefined || `test`);
-// console.log(undefined || null || `not null`);
-// console.log(undefined || `` || 1);
-//?? is similar but only works with undefined OR null
-// console.log(0 ?? `test`);
-
-
 // let a = bigObject.prop6 || `unknown`;
 // console.log(a);
 
@@ -196,28 +188,6 @@ let bigMap = new Map([
 // }
 
 
-// processArray(bigArray);
-// function processArray(anArray){
-//     let [a, b, ...c] = anArray;
-//     console.log(`${a} + ${b} = ${a + b}`);
-
-//     if(c.length >= 2)
-//         processArray(c);
-// }
-
-
-// let [a, b, [c, d], [e, f]] = optionalNestedArray;
-// process(a,b,c,d,e,f);
-
-
-// function process(...args){
-//     let total = 0;
-//     for(let i = 0; i < args.length; i++)
-//         total+= args[i];
-
-//     console.log(total);
-// }
-
 
 //Use : to use a different variable name
 //Don't forget objects don't need order
@@ -236,22 +206,3 @@ let bigMap = new Map([
 //Default if variable doesn't exist
 // let { prop1: a = '', prop2:b=0, prop6:c = 10} = bigObject;
 // console.log(a,b,c);
-
-
-// let firstLast = returnArray(9,8,7,6,5,4,3,2,1,0);
-// console.log(firstLast);
-
-//Rest pattern
-//... will compile the submitted vairables into an array
-// function returnArray(...args){
-//     console.log(`total: ${args}`);
-
-//     let first = args.shift();
-//     let last = args.pop();
-
-//     console.log(`first: ${first}`);
-//     console.log(`last: ${last}`);
-//     console.log(`remainder: ${args}`);
-
-//     return [first, last, args];
-// }
