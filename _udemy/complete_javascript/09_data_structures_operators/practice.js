@@ -49,29 +49,10 @@ let bigMap = new Map([
 ]);
 
 
-
-
-
 //setting an array as a default
 // const {stringArray:optionArray = []} = bigObject;
 // console.log(optionArray);
 
-
-
-// let a = bigObject.prop6 || `unknown`;
-// console.log(a);
-
-// let a = bigObject.prop6 ?? false;
-// console.log(a);
-
-
-//you can add optional chaining to a functions () and use ??
-// console.log(bigObject?.functionProp2?.() ?? `unavailable`); 
-
-
-//need to remember to apply optional chaining and nullish
-// let prop = bigObject?.prop6?.name ?? 'prop missing';
-// console.log(prop);
 
 
 //nullish
