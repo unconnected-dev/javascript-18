@@ -4,6 +4,15 @@
 
 const aString = `just some text to play with`;
 
+if(true){
+    function removeNonAlphaNumeric(str){
+        return str.replace(/[^a-zA-Z0-9]/g, '');
+    }
+
+    const res = removeNonAlphaNumeric(`${aString}@123`);
+    console.log(`res: ${res}`);
+}
+
 if(false){
     function capitalizeWords(str){
         return str.toLowerCase()
