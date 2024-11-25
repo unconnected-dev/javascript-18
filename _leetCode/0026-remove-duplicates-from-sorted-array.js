@@ -37,5 +37,23 @@ if(false){
     };
 }
 
+// Removes duplicates by going through list
+// Finds the first unique instance of each number
+// Puts them to the start of the list with i
+if(true){
+    var removeDuplicates = function(nums) {
+        let i = 1;
+
+        for (let j = 1; j < nums.length; j++) {
+            if (nums[j] !== nums[j - 1]) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+    
+        return i;
+    };
+}
+
 console.log(`${removeDuplicates(caseNums_1)}`);
 console.log(`${removeDuplicates(caseNums_2)}`);
